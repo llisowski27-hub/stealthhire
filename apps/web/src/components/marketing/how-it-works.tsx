@@ -7,21 +7,21 @@ type Step = {
 const STEPS: readonly Step[] = [
   {
     number: "01",
-    title: "Bring your proof",
+    title: "Connect your sources",
     description:
-      "Import LinkedIn history and GitHub repositories, then add what a CV can't hold — olympiad placements, hackathon wins, publications, certifications, shipped projects.",
+      "Import your career history and repositories in a couple of clicks, then add what a CV has no field for — olympiad placements, hackathon wins, publications, certifications.",
   },
   {
     number: "02",
-    title: "Get it verified",
+    title: "It gets verified for you",
     description:
-      "Employers, certification bodies, and partner agencies attest to what you claim. Every verified entry traces back to who confirmed it.",
+      "Employers, organisers, certification bodies, and partner agencies confirm what you listed. You do it once, not for every application.",
   },
   {
     number: "03",
-    title: "Hear from the decision maker",
+    title: "Hiring managers message you",
     description:
-      "Hiring managers search on demonstrated ability and message you directly. No intermediary deciding which roles you get to hear about.",
+      "They search on what you've actually done and write to you themselves — no intermediary deciding which roles reach you, and no scheduling chain before the first reply.",
   },
 ];
 

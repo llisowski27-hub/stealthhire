@@ -52,8 +52,8 @@ export default function Home() {
 
       <Section
         headingId="value-heading"
-        title="What the agency model leaves on the table"
-        lede="Headhunters solved a real problem: finding people is hard. The cost is everything that happens after the search."
+        title="Every handoff costs a week"
+        lede="Finding people was never the hard part. The delay comes from what sits on top of it — relays, rescheduling, and context that thins out at every step."
         raised
       >
         <Bento />
@@ -63,14 +63,14 @@ export default function Home() {
         id="comparison"
         headingId="comparison-heading"
         title="The old way, and ours"
-        lede="Same goal — the right person in the right role. Different evidence, different incentives."
+        lede="Same goal — the right person in the right role. The difference is how many steps it takes to get there."
       >
         <Comparison />
       </Section>
 
       <Section
         headingId="how-heading"
-        title="How it works"
+        title="Set it up once"
         lede="Three steps, and no one standing between you and the person making the decision."
         raised
       >
@@ -102,9 +102,9 @@ export default function Home() {
         />
         <div className="mx-auto w-full max-w-content px-6 py-28 text-center">
           <h2 className="text-display mx-auto max-w-3xl text-3xl font-semibold md:text-5xl">
-            Your proof already exists.
+            Build it once.
             <br />
-            <span className="text-muted">Put it where it counts.</span>
+            <span className="text-muted">Get messaged directly.</span>
           </h2>
           <div className="mt-10 flex justify-center">
             <ButtonLink href="/profile" size="lg">

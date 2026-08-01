@@ -8,30 +8,36 @@ type ComparisonRow = {
 
 const ROWS: readonly ComparisonRow[] = [
   {
-    dimension: "Sourcing",
-    traditional: "Cold outreach based on job titles and keyword matches",
-    stealthhire: "Search over verified performance data and demonstrated skill",
+    dimension: "First contact",
+    traditional:
+      "Days of relay — sourcer to recruiter to candidate and back again",
+    stealthhire: "Immediate. The hiring manager writes to the candidate",
   },
   {
-    dimension: "Evaluation",
-    traditional: "Keyword-optimized CVs, screened in seconds by non-experts",
+    dimension: "Steps between",
+    traditional: "Three or four people carrying the conversation",
+    stealthhire: "None",
+  },
+  {
+    dimension: "Context",
+    traditional: "A second-hand summary of the role, and of the candidate",
+    stealthhire: "Both sides explain themselves, in their own words",
+  },
+  {
+    dimension: "Candidate data",
+    traditional: "A CV, reformatted for whichever filter is running",
     stealthhire:
-      "Olympiads, hackathons, publications, shipped work — with proof attached",
+      "Career history plus verified results, pulled from source and kept current",
   },
   {
-    dimension: "Communication",
-    traditional: "Every message relayed through recruiter handoff chains",
-    stealthhire: "Hiring managers and candidates talk directly, from day one",
+    dimension: "Screening",
+    traditional: "Repeated from scratch at each stage",
+    stealthhire: "Already done — claims arrive verified",
   },
   {
     dimension: "Cost",
     traditional: "15–30% of first-year salary per placement",
     stealthhire: "Platform access — no percentage-of-salary fees",
-  },
-  {
-    dimension: "Incentives",
-    traditional: "Paid on placement speed, not on long-term fit",
-    stealthhire: "Nothing to gain from a bad match — the data decides",
   },
 ];
 

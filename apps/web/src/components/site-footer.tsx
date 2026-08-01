@@ -18,7 +18,7 @@ export function SiteFooter() {
         <div className="max-w-xs">
           <p className="font-mono text-sm text-foreground">stealthhire</p>
           <p className="mt-3 text-sm text-muted">
-            Talent intelligence built on verified performance data.
+            Verified profiles, direct conversations, no handoffs in between.
           </p>
         </div>
         <div className="flex gap-16">

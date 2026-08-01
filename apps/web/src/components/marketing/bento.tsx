@@ -1,22 +1,21 @@
 import { cn } from "@/lib/cn";
 
 const SIGNAL_CHIPS = [
-  "Olympiads",
-  "Hackathons",
-  "Publications",
+  "Career history",
   "Open source",
   "Certifications",
-  "Competitions",
+  "Publications",
+  "Olympiads",
+  "Hackathons",
   "Shipped products",
   "Patents",
 ] as const;
 
-const SOURCES = [
-  "LinkedIn career history",
-  "GitHub repositories",
-  "Certification bodies",
-  "Employer verification",
-  "Partner agencies",
+const ATTESTERS = [
+  "Employers confirm the roles",
+  "Organisers confirm the results",
+  "Certification bodies confirm the credentials",
+  "Partner agencies vouch for their candidates",
 ] as const;
 
 function Cell({
@@ -43,12 +42,11 @@ export function Bento() {
   return (
     <div className="grid gap-4 md:grid-cols-3">
       <Cell className="md:col-span-2">
-        <h3 className="text-lg font-medium">
-          Everything a CV throws away
-        </h3>
+        <h3 className="text-lg font-medium">One profile, every source</h3>
         <p className="mt-2 max-w-prose text-sm text-muted">
-          Keyword filters are tuned for job titles, so the strongest evidence
-          of ability never reaches a human. We index it as first-class data.
+          Your CV is a starting point, not the whole story. We pull career
+          history together with the work and results that no CV field has room
+          for — and keep it current so you write it once.
         </p>
         <ul className="mt-6 flex flex-wrap gap-2">
           {SIGNAL_CHIPS.map((chip) => (
@@ -64,46 +62,46 @@ export function Bento() {
 
       <Cell className="justify-between">
         <div>
-          <h3 className="text-lg font-medium">No placement fees</h3>
+          <h3 className="text-lg font-medium">Steps in between</h3>
           <p className="mt-2 text-sm text-muted">
-            Nothing taken from the salary you negotiated.
+            Hiring manager to candidate. That&apos;s the whole chain.
           </p>
         </div>
         <p
           className="text-display mt-8 text-6xl font-semibold text-accent"
-          aria-label="Zero percent of salary"
+          aria-label="Zero intermediaries"
         >
-          0%
+          0
         </p>
       </Cell>
 
       <Cell>
-        <h3 className="text-lg font-medium">One conversation</h3>
+        <h3 className="text-lg font-medium">Answer once</h3>
         <p className="mt-2 text-sm text-muted">
-          The hiring manager writes to the candidate. That&apos;s the whole
-          chain — no handoffs, no summaries of summaries.
+          No repeating your background to a sourcer, then a recruiter, then the
+          person who actually makes the decision.
         </p>
       </Cell>
 
       <Cell className="md:col-span-2">
         <h3 className="text-lg font-medium">
-          A profile assembled from trusted sources
+          Verified before anyone has to ask
         </h3>
         <p className="mt-2 max-w-prose text-sm text-muted">
-          Claims are traceable to whoever attested them, so &quot;verified&quot;
-          means something specific.
+          Every claim traces back to whoever confirmed it, so the screening
+          conversation is already over before the first message.
         </p>
         <ul className="mt-6 grid gap-x-6 gap-y-2 sm:grid-cols-2">
-          {SOURCES.map((source) => (
+          {ATTESTERS.map((attester) => (
             <li
-              key={source}
+              key={attester}
               className="flex items-center gap-2.5 text-sm text-muted"
             >
               <span
                 className="size-1.5 shrink-0 rounded-full bg-accent"
                 aria-hidden="true"
               />
-              {source}
+              {attester}
             </li>
           ))}
         </ul>

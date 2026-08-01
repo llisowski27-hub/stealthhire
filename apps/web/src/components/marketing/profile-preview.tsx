@@ -9,6 +9,11 @@ type ProofEntry = {
 /** Illustrative profile used to show the product surface, not a real person. */
 const PROOF_ENTRIES: readonly ProofEntry[] = [
   {
+    label: "Senior Engineer · Payments",
+    detail: "4 yrs — scaled ledger to 12k tx/s",
+    source: "Verified by employer",
+  },
+  {
     label: "IOI — Silver Medal",
     detail: "International Olympiad in Informatics, 2021",
     source: "Verified by organiser",

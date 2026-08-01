@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s · StealthHire",
   },
   description:
-    "Talent intelligence platform connecting hiring managers directly with professionals through verified performance data.",
+    "Verified candidate profiles assembled from career history, repositories, certifications and competition results — so hiring managers can message the right person directly.",
 };
 
 export default function RootLayout({

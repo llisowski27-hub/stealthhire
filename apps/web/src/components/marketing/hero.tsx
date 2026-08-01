@@ -20,16 +20,16 @@ export function Hero() {
             </span>
 
             <h1 className="text-display mt-8 text-4xl font-semibold sm:text-5xl md:text-6xl 3xl:text-7xl">
-              Hire on proof.
+              Hire direct.
               <br />
-              <span className="text-muted">Not on résumés.</span>
+              <span className="text-muted">Hire faster.</span>
             </h1>
 
             <p className="mt-8 max-w-prose text-lg text-muted">
-              Headhunters charge 15–30% of a first-year salary to forward a CV.
-              StealthHire replaces that with verified performance data —
-              olympiads, hackathons, publications, shipped work — and connects
-              hiring managers straight to the people behind it.
+              StealthHire assembles a candidate&apos;s full picture — career
+              history, repositories, certifications, competition results —
+              verifies it, and puts you one message away from the person. No
+              recruiter relay, no waiting a week for an introduction.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
