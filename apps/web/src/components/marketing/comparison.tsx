@@ -32,7 +32,8 @@ const ROWS: readonly ComparisonRow[] = [
   {
     dimension: "Screening",
     traditional: "Repeated from scratch at each stage",
-    stealthhire: "Already done — claims arrive verified",
+    stealthhire:
+      "Claims arrive with their evidence attached, and say so when they have none",
   },
   {
     dimension: "Cost",

@@ -13,9 +13,9 @@ const STEPS: readonly Step[] = [
   },
   {
     number: "02",
-    title: "It gets verified for you",
+    title: "Most of it verifies itself",
     description:
-      "Employers, organisers, certification bodies, and partner agencies confirm what you listed. You do it once, not for every application.",
+      "Competition results, publications and certifications are matched against official records automatically. Employment gets confirmed by an employer or partner agency — only when a role is actually in play.",
   },
   {
     number: "03",

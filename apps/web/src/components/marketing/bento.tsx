@@ -12,10 +12,10 @@ const SIGNAL_CHIPS = [
 ] as const;
 
 const ATTESTERS = [
-  "Employers confirm the roles",
-  "Organisers confirm the results",
-  "Certification bodies confirm the credentials",
-  "Partner agencies vouch for their candidates",
+  "Competition results, matched to official records",
+  "Repositories, from accounts you prove you own",
+  "Certifications, checked with the issuer",
+  "Roles, confirmed by employers and partner agencies",
 ] as const;
 
 function Cell({
@@ -85,11 +85,12 @@ export function Bento() {
 
       <Cell className="md:col-span-2">
         <h3 className="text-lg font-medium">
-          Verified before anyone has to ask
+          Most of it verifies itself
         </h3>
         <p className="mt-2 max-w-prose text-sm text-muted">
-          Every claim traces back to whoever confirmed it, so the screening
-          conversation is already over before the first message.
+          Competition results, publications, certifications and open-source
+          work are checkable without asking anyone a favour. Every claim shows
+          exactly what confirmed it — including the ones nothing has yet.
         </p>
         <ul className="mt-6 grid gap-x-6 gap-y-2 sm:grid-cols-2">
           {ATTESTERS.map((attester) => (
