@@ -13,6 +13,7 @@ import { Field, fieldDescriptionIds } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { ModalDemo } from "./modal-demo";
+import { ToastDemo } from "./toast-demo";
 
 /**
  * Dev-only visual review surface for the UI primitives. Not part of the
@@ -39,6 +40,8 @@ export function ComponentGallery() {
           <Button size="lg">Large</Button>
           <ModalDemo />
         </div>
+
+        <ToastDemo />
 
         <div className="grid gap-6 sm:grid-cols-2 max-w-2xl">
           <Field id="g-email" label="Email" hint="Work email preferred">

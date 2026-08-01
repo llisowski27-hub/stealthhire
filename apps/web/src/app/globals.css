@@ -141,6 +141,20 @@ body {
   }
 }
 
+/* Toast enter animation: opacity/transform only (GPU-composited) */
+.toast-animate {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity var(--default-transition-duration) var(--ease-out-quart),
+    transform var(--default-transition-duration) var(--ease-out-quart);
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(0.5rem);
+  }
+}
+
 /* Accessibility: honor reduced-motion globally */
 @media (prefers-reduced-motion: reduce) {
   *,
