@@ -17,6 +17,11 @@ All work in this repository follows:
   APIs, database changes, and frontend pages.
 - [`docs/SECURITY.md`](docs/SECURITY.md) — security baseline every change
   is reviewed against.
+- [`docs/FRONTEND_GUIDELINES.md`](docs/FRONTEND_GUIDELINES.md) — frontend
+  process, code standards, and per-component requirements.
+- [`docs/DESIGN_LANGUAGE.md`](docs/DESIGN_LANGUAGE.md) — visual identity,
+  color palette, and design principles. The design system must be defined
+  and approved before any feature UI is built.
 
 Non-negotiables, summarized:
 
