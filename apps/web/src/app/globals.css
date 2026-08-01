@@ -127,6 +127,20 @@ body {
   color: var(--accent-foreground);
 }
 
+/* Modal enter animation: opacity/transform only (GPU-composited) */
+.modal-animate[open] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  transition:
+    opacity var(--default-transition-duration) var(--ease-out-quart),
+    transform var(--default-transition-duration) var(--ease-out-quart);
+
+  @starting-style {
+    opacity: 0;
+    transform: translateY(0.5rem) scale(0.98);
+  }
+}
+
 /* Accessibility: honor reduced-motion globally */
 @media (prefers-reduced-motion: reduce) {
   *,

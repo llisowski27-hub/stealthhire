@@ -12,6 +12,7 @@ import { ErrorState } from "@/components/ui/error-state";
 import { Field, fieldDescriptionIds } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
+import { ModalDemo } from "./modal-demo";
 
 /**
  * Dev-only visual review surface for the UI primitives. Not part of the
@@ -36,6 +37,7 @@ export function ComponentGallery() {
             Small
           </Button>
           <Button size="lg">Large</Button>
+          <ModalDemo />
         </div>
 
         <div className="grid gap-6 sm:grid-cols-2 max-w-2xl">
