@@ -38,46 +38,46 @@ const ROWS: readonly ComparisonRow[] = [
 /** Side-by-side argument: traditional headhunting vs StealthHire. */
 export function Comparison() {
   return (
-    <div className="overflow-x-auto">
-      <table className="w-full border-separate border-spacing-0 text-left text-sm">
+    <div className="overflow-x-auto rounded-xl border border-edge bg-surface-1">
+      <table className="w-full min-w-3xl border-collapse text-left text-sm">
+        <caption className="sr-only">
+          Traditional headhunting compared with StealthHire
+        </caption>
         <thead>
           <tr>
-            <th scope="col" className="w-32 pb-4 pr-4 font-mono text-xs text-muted">
-              &nbsp;
+            <th scope="col" className="w-40 px-6 py-5">
+              <span className="sr-only">Dimension</span>
             </th>
-            <th scope="col" className="pb-4 pr-4 font-medium text-muted">
+            <th
+              scope="col"
+              className="px-6 py-5 font-medium text-muted"
+            >
               Traditional headhunting
             </th>
-            <th scope="col" className="pb-4 font-medium text-accent">
+            <th
+              scope="col"
+              className="border-x border-edge bg-accent/[0.06] px-6 py-5 font-medium text-accent"
+            >
               StealthHire
             </th>
           </tr>
         </thead>
         <tbody>
-          {ROWS.map((row, index) => (
-            <tr key={row.dimension}>
+          {ROWS.map((row) => (
+            <tr key={row.dimension} className="border-t border-edge">
               <th
                 scope="row"
-                className={cn(
-                  "border-t border-edge py-4 pr-4 align-top font-mono text-xs",
-                  "font-normal text-muted",
-                  index === ROWS.length - 1 && "border-b",
-                )}
+                className="px-6 py-5 align-top font-mono text-xs font-normal text-muted"
               >
                 {row.dimension}
               </th>
-              <td
-                className={cn(
-                  "border-t border-edge py-4 pr-4 align-top text-muted",
-                  index === ROWS.length - 1 && "border-b",
-                )}
-              >
+              <td className="px-6 py-5 align-top text-muted">
                 {row.traditional}
               </td>
               <td
                 className={cn(
-                  "border-t border-edge py-4 align-top text-foreground",
-                  index === ROWS.length - 1 && "border-b",
+                  "border-x border-edge bg-accent/[0.06] px-6 py-5",
+                  "align-top text-foreground",
                 )}
               >
                 {row.stealthhire}

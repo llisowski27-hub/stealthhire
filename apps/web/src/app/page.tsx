@@ -1,163 +1,116 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import { ButtonLink } from "@/components/ui/button-link";
+import { Bento } from "@/components/marketing/bento";
 import { Comparison } from "@/components/marketing/comparison";
+import { Hero } from "@/components/marketing/hero";
 import { HowItWorks } from "@/components/marketing/how-it-works";
 
-const BROKEN_THINGS = [
-  {
-    title: "You pay for introductions",
-    description:
-      "A headhunter takes 15–30% of a first-year salary to forward a CV. That fee buys access to a network, not evidence that someone can do the job.",
-  },
-  {
-    title: "Your message goes through three people",
-    description:
-      "The person who understands the role rarely speaks to the candidate. By the time context reaches them, it has been summarized twice and lost the detail that mattered.",
-  },
-  {
-    title: "The best signal never reaches the screen",
-    description:
-      "An IMO medal, a winning hackathon build, a paper, a repository people actually depend on — none of it survives a keyword filter tuned for job titles.",
-  },
-] as const;
+type SectionProps = {
+  id?: string;
+  headingId: string;
+  title: string;
+  lede: string;
+  raised?: boolean;
+  children: React.ReactNode;
+};
+
+function Section({
+  id,
+  headingId,
+  title,
+  lede,
+  raised = false,
+  children,
+}: SectionProps) {
+  return (
+    <section
+      id={id}
+      aria-labelledby={headingId}
+      className={
+        raised
+          ? "scroll-mt-16 border-b border-edge bg-background-raised"
+          : "scroll-mt-16 border-b border-edge"
+      }
+    >
+      <div className="mx-auto w-full max-w-content px-6 py-24">
+        <h2
+          id={headingId}
+          className="text-display max-w-3xl text-3xl font-semibold md:text-4xl"
+        >
+          {title}
+        </h2>
+        <p className="mt-4 max-w-prose text-lg text-muted">{lede}</p>
+        <div className="mt-12">{children}</div>
+      </div>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
     <main className="flex-1 w-full">
-      <section className="mx-auto w-full max-w-content px-6 py-24 md:py-32">
-        <p className="mb-4 font-mono text-sm text-accent">
-          talent intelligence platform
-        </p>
-        <h1 className="mb-6 max-w-4xl text-4xl font-semibold tracking-tight md:text-5xl">
-          Hiring shouldn&apos;t cost 25% of a salary to forward a CV.
-        </h1>
-        <p className="mb-10 max-w-prose text-lg text-muted">
-          StealthHire replaces the headhunter&apos;s network with verified
-          performance data — olympiads, hackathons, publications, shipped work —
-          and puts hiring managers in direct contact with the people behind it.
-        </p>
-        <div className="flex flex-wrap gap-3">
-          <ButtonLink href="/profile" size="lg">
-            Build your verified profile
-          </ButtonLink>
-          <ButtonLink href="#comparison" size="lg" variant="secondary">
-            See how we compare
-          </ButtonLink>
-        </div>
-      </section>
+      <Hero />
 
-      <section
-        aria-labelledby="broken-heading"
-        className="border-t border-edge bg-background-raised"
+      <Section
+        headingId="value-heading"
+        title="What the agency model leaves on the table"
+        lede="Headhunters solved a real problem: finding people is hard. The cost is everything that happens after the search."
+        raised
       >
-        <div className="mx-auto w-full max-w-content px-6 py-20">
-          <h2
-            id="broken-heading"
-            className="mb-3 text-2xl font-semibold tracking-tight"
-          >
-            What recruitment agencies charge you for
-          </h2>
-          <p className="mb-10 max-w-prose text-muted">
-            Headhunters solved a real problem: finding people is hard. The
-            problem is what the model costs once the search is over.
-          </p>
-          <div className="grid gap-4 md:grid-cols-3">
-            {BROKEN_THINGS.map((item) => (
-              <Card key={item.title}>
-                <CardHeader>
-                  <CardTitle>{item.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{item.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
+        <Bento />
+      </Section>
 
-      <section
+      <Section
         id="comparison"
-        aria-labelledby="comparison-heading"
-        className="scroll-mt-16 border-t border-edge"
+        headingId="comparison-heading"
+        title="The old way, and ours"
+        lede="Same goal — the right person in the right role. Different evidence, different incentives."
       >
-        <div className="mx-auto w-full max-w-content px-6 py-20">
-          <h2
-            id="comparison-heading"
-            className="mb-3 text-2xl font-semibold tracking-tight"
-          >
-            The old way, and ours
-          </h2>
-          <p className="mb-10 max-w-prose text-muted">
-            Same goal — the right person in the right role. Different evidence,
-            different incentives.
-          </p>
-          <Comparison />
-        </div>
-      </section>
+        <Comparison />
+      </Section>
 
-      <section
-        aria-labelledby="how-heading"
-        className="border-t border-edge bg-background-raised"
+      <Section
+        headingId="how-heading"
+        title="How it works"
+        lede="Three steps, and no one standing between you and the person making the decision."
+        raised
       >
-        <div className="mx-auto w-full max-w-content px-6 py-20">
-          <h2
-            id="how-heading"
-            className="mb-3 text-2xl font-semibold tracking-tight"
-          >
-            How it works
-          </h2>
-          <p className="mb-10 max-w-prose text-muted">
-            Three steps, and no one between you and the person making the
-            decision.
-          </p>
-          <HowItWorks />
-        </div>
-      </section>
+        <HowItWorks />
+      </Section>
 
-      <section
-        aria-labelledby="agencies-heading"
-        className="border-t border-edge"
+      <Section
+        headingId="agencies-heading"
+        title="We're not here to delete recruiters"
+        lede="Agencies know their candidates better than any scraper does."
       >
-        <div className="mx-auto w-full max-w-content px-6 py-20">
-          <div className="max-w-prose">
-            <h2
-              id="agencies-heading"
-              className="mb-3 text-2xl font-semibold tracking-tight"
-            >
-              We&apos;re not here to delete recruiters
-            </h2>
-            <p className="mb-4 text-muted">
-              Agencies know their candidates better than any scraper does. On
-              StealthHire they become verified talent providers: they contribute
-              pipelines, vouch for what candidates claim, and earn referral
-              revenue.
-            </p>
-            <p className="text-muted">
-              What they stop doing is standing in the middle of every
-              conversation and charging for the privilege.
-            </p>
+        <div className="grid gap-6 md:grid-cols-2">
+          <p className="text-muted">
+            On StealthHire they become verified talent providers: they
+            contribute pipelines, vouch for what candidates claim, expand
+            coverage, and earn referral revenue.
+          </p>
+          <p className="text-muted">
+            What they stop doing is standing in the middle of every
+            conversation and charging a percentage for the privilege.
+          </p>
+        </div>
+      </Section>
+
+      <section className="relative isolate overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 -z-10 h-96 glow-accent rotate-180"
+        />
+        <div className="mx-auto w-full max-w-content px-6 py-28 text-center">
+          <h2 className="text-display mx-auto max-w-3xl text-3xl font-semibold md:text-5xl">
+            Your proof already exists.
+            <br />
+            <span className="text-muted">Put it where it counts.</span>
+          </h2>
+          <div className="mt-10 flex justify-center">
+            <ButtonLink href="/profile" size="lg">
+              Build your verified profile
+            </ButtonLink>
           </div>
-        </div>
-      </section>
-
-      <section className="border-t border-edge bg-background-raised">
-        <div className="mx-auto w-full max-w-content px-6 py-20">
-          <h2 className="mb-3 text-2xl font-semibold tracking-tight">
-            Your proof is already there. Put it somewhere it counts.
-          </h2>
-          <p className="mb-8 max-w-prose text-muted">
-            Start with what you&apos;ve won, built, published, and shipped.
-          </p>
-          <ButtonLink href="/profile" size="lg">
-            Build your verified profile
-          </ButtonLink>
         </div>
       </section>
     </main>

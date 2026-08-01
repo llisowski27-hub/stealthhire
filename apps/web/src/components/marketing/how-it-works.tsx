@@ -28,12 +28,15 @@ const STEPS: readonly Step[] = [
 /** Three-step explanation of the candidate journey. */
 export function HowItWorks() {
   return (
-    <ol className="grid gap-6 md:grid-cols-3">
+    <ol className="grid gap-px overflow-hidden rounded-xl border border-edge bg-edge md:grid-cols-3">
       {STEPS.map((step) => (
-        <li key={step.number} className="flex flex-col gap-3">
+        <li
+          key={step.number}
+          className="flex flex-col gap-4 bg-surface-1 p-6 md:p-8"
+        >
           <span
             aria-hidden="true"
-            className="font-mono text-sm text-accent"
+            className="flex size-9 items-center justify-center rounded-md border border-accent/30 bg-accent/10 font-mono text-xs text-accent"
           >
             {step.number}
           </span>
