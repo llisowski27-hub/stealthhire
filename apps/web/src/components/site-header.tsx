@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { ButtonLink } from "@/components/ui/button-link";
+import { cn } from "@/lib/cn";
 
 const NAV_LINKS = [
-  { href: "/profile", label: "Platform" },
-  { href: "/design", label: "Design system" },
+  { href: "/profile", label: "Platform", hideOnMobile: false },
+  { href: "/design", label: "Design system", hideOnMobile: true },
 ] as const;
 
 /** Global top navigation. */
@@ -22,12 +23,20 @@ export function SiteHeader() {
             <Link
               key={link.href}
               href={link.href}
-              className="rounded-md px-3 py-1.5 text-sm text-muted transition-colors hover:bg-surface-2 hover:text-foreground"
+              className={cn(
+                "rounded-md px-3 py-1.5 text-sm whitespace-nowrap text-muted",
+                "transition-colors hover:bg-surface-2 hover:text-foreground",
+                link.hideOnMobile && "hidden sm:inline-flex",
+              )}
             >
               {link.label}
             </Link>
           ))}
-          <ButtonLink href="/profile" size="sm" className="ml-2">
+          <ButtonLink
+            href="/profile"
+            size="sm"
+            className="ml-2 whitespace-nowrap"
+          >
             Get started
           </ButtonLink>
         </nav>
