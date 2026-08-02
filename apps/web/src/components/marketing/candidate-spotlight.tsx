@@ -14,6 +14,11 @@ const CREDENTIALS: readonly Credential[] = [
     detail: "MSc Computer Science — Distinction",
   },
   {
+    kind: "experience",
+    headline: "Senior Quantitative Developer",
+    detail: "Systematic trading fund · 4 yrs · derivatives pricing",
+  },
+  {
     kind: "open source",
     headline: "monte-carlo-engine",
     detail: "3.1k stars · GPU path simulation",
