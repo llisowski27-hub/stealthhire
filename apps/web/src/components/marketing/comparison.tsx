@@ -27,13 +27,12 @@ const ROWS: readonly ComparisonRow[] = [
     dimension: "Candidate data",
     traditional: "A CV, reformatted for whichever filter is running",
     stealthhire:
-      "Career history plus verified results, pulled from source and kept current",
+      "LinkedIn, CV and repositories mapped into one profile, kept current",
   },
   {
-    dimension: "Screening",
-    traditional: "Repeated from scratch at each stage",
-    stealthhire:
-      "Claims arrive with their evidence attached, and say so when they have none",
+    dimension: "Repetition",
+    traditional: "Your background retyped for every agency and portal",
+    stealthhire: "Built once, reused everywhere",
   },
   {
     dimension: "Cost",

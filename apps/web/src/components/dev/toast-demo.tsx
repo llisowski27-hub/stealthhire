@@ -18,7 +18,7 @@ function ToastButtons() {
       <Button
         variant="secondary"
         onClick={() =>
-          toast({ title: "Profile verified", variant: "success" })
+          toast({ title: "Profile published", variant: "success" })
         }
       >
         Success toast

@@ -11,11 +11,11 @@ const SIGNAL_CHIPS = [
   "Patents",
 ] as const;
 
-const AUTO_CHECKS = [
-  "Competition results, matched to official records",
-  "Publications, resolved by DOI",
-  "Certifications, checked with the issuer",
-  "Repositories, from accounts you prove you own",
+const MAPPED_SOURCES = [
+  "LinkedIn career history",
+  "Your CV, parsed into structured fields",
+  "GitHub repositories and languages",
+  "Awards, olympiads and hackathons you add",
 ] as const;
 
 function Cell({
@@ -84,24 +84,23 @@ export function Bento() {
       </Cell>
 
       <Cell className="md:col-span-2">
-        <h3 className="text-lg font-medium">Nobody has to vouch for you</h3>
+        <h3 className="text-lg font-medium">Nothing to retype</h3>
         <p className="mt-2 max-w-prose text-sm text-muted">
-          We only verify what can be checked against public records or an
-          account you own — no chasing former managers for a favour. Every
-          claim shows exactly what confirmed it, and says so plainly when
-          nothing has.
+          Your history already exists in a dozen places. We map it into one
+          profile and keep it in sync, so you are not rewriting the same
+          background for every application.
         </p>
         <ul className="mt-6 grid gap-x-6 gap-y-2 sm:grid-cols-2">
-          {AUTO_CHECKS.map((check) => (
+          {MAPPED_SOURCES.map((source) => (
             <li
-              key={check}
+              key={source}
               className="flex items-center gap-2.5 text-sm text-muted"
             >
               <span
                 className="size-1.5 shrink-0 rounded-full bg-accent"
                 aria-hidden="true"
               />
-              {check}
+              {source}
             </li>
           ))}
         </ul>

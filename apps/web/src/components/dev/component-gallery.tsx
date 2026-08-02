@@ -65,7 +65,7 @@ export function ComponentGallery() {
         <div className="grid gap-4 md:grid-cols-3">
           <Card>
             <CardHeader>
-              <CardTitle>Verified profile</CardTitle>
+              <CardTitle>Candidate profile</CardTitle>
               <CardDescription>
                 Multi-source talent intelligence.
               </CardDescription>
@@ -92,7 +92,7 @@ export function ComponentGallery() {
 
           <EmptyState
             title="No candidates yet"
-            description="Verified candidates will appear here."
+            description="Candidates will appear here."
             action={<Button size="sm">Invite</Button>}
           />
         </div>

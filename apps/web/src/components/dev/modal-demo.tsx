@@ -17,7 +17,7 @@ export function ModalDemo() {
         open={open}
         onClose={() => setOpen(false)}
         title="Invite a candidate"
-        description="They'll receive an email with a link to build their verified profile."
+        description="They'll receive an email with a link to build their profile."
       >
         <div className="mt-3 flex justify-end gap-3">
           <Button variant="ghost" onClick={() => setOpen(false)}>

@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/components/ui/button-link";
-import { ProfilePreview } from "./profile-preview";
+import { ImportPreview } from "./import-preview";
 
 /** Landing hero: statement type, one soft light source, product in view. */
 export function Hero() {
@@ -26,15 +26,15 @@ export function Hero() {
             </h1>
 
             <p className="mt-8 max-w-prose text-lg text-muted">
-              StealthHire assembles a candidate&apos;s full picture — career
-              history, repositories, certifications, competition results —
-              verifies it, and puts you one message away from the person. No
+              Bring your LinkedIn and your CV. StealthHire maps them into one
+              profile — together with the work, awards and results a CV has no
+              room for — and puts hiring managers one message away. No
               recruiter relay, no waiting a week for an introduction.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
               <ButtonLink href="/profile" size="lg">
-                Build your verified profile
+                Build your profile
               </ButtonLink>
               <ButtonLink href="#comparison" size="lg" variant="secondary">
                 See how we compare
@@ -42,7 +42,7 @@ export function Hero() {
             </div>
           </div>
 
-          <ProfilePreview className="lg:translate-y-2" />
+          <ImportPreview className="lg:translate-y-2" />
         </div>
       </div>
     </section>

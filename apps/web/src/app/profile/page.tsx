@@ -11,12 +11,12 @@ export default function ProfilePage() {
     <main className="flex-1 w-full max-w-content mx-auto px-6 py-16">
       <header className="mb-10 max-w-prose">
         <h1 className="mb-3 text-3xl font-semibold tracking-tight">
-          Build your verified profile
+          Build your profile
         </h1>
         <p className="text-muted">
-          Tell us who you are and what you&apos;ve achieved. Every entry can
-          be verified later — that&apos;s what makes it worth more than a
-          resume.
+          Tell us who you are and what you&apos;ve done. LinkedIn and CV
+          import land with accounts — for now, add the essentials and the
+          achievements a CV has no room for.
         </p>
       </header>
       <ToastProvider>

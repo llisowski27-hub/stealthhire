@@ -107,7 +107,7 @@ export default function Home() {
           </h2>
           <div className="mt-10 flex justify-center">
             <ButtonLink href="/profile" size="lg">
-              Build your verified profile
+              Build your profile
             </ButtonLink>
           </div>
         </div>

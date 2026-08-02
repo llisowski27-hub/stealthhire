@@ -7,21 +7,21 @@ type Step = {
 const STEPS: readonly Step[] = [
   {
     number: "01",
-    title: "Connect your sources",
+    title: "Bring what you already have",
     description:
-      "Import your career history and repositories in a couple of clicks, then add what a CV has no field for — olympiad placements, hackathon wins, publications, certifications.",
+      "Connect LinkedIn, upload your CV, link your repositories. Then add what a CV has no field for — olympiad placements, hackathon wins, publications, certifications.",
   },
   {
     number: "02",
-    title: "It verifies itself",
+    title: "It becomes one profile",
     description:
-      "Competition results, publications, certifications and repositories are checked against public records and connected accounts automatically. You don't chase anyone, and nothing waits on a reply.",
+      "Roles, education, projects and skills are mapped into structured fields and merged, so hiring managers can search them properly instead of reading around a PDF layout.",
   },
   {
     number: "03",
     title: "Hiring managers message you",
     description:
-      "They search on what you've actually done and write to you themselves — no intermediary deciding which roles reach you, and no scheduling chain before the first reply.",
+      "They search on what you've actually done and write to you themselves — no intermediary deciding which roles reach you, and no scheduling chain before a first reply.",
   },
 ];
 

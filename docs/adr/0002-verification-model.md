@@ -1,9 +1,31 @@
 # ADR 0002 — Graded Verification Model
 
-- **Status:** Accepted
+- **Status:** **Deferred — not implemented.** No verification exists in the
+  product, and none is planned for v1. This document is kept as analysis for
+  whenever verification is revisited.
 - **Date:** 2026-08-01
-- **Supersedes:** the implicit binary "verified / not verified" model used in
-  early UI work
+
+## v1 decision: no verification layer
+
+Profiles are built by **mapping data the candidate already has** — LinkedIn
+career history, an uploaded CV parsed into structured fields, linked
+repositories — plus achievements they enter themselves. Nothing is checked,
+nothing is badged, and no claim is presented as confirmed.
+
+Rationale: verification is only worth building once there is a reason to
+trust-rank profiles at all, which requires users, employers, and evidence of
+where fabrication actually hurts. Building a trust model before any of that
+exists spends effort on a problem the product has not yet earned, and every
+verification tier — even the automatic ones — needs its own integration and
+its own failure modes.
+
+The consequence is accepted and must not be obscured: **nothing on a profile
+is confirmed, so no surface may imply that it is.** No "verified" badges, no
+trust scores, no wording that suggests third-party confirmation.
+
+The analysis below is retained unchanged for a future revisit.
+
+---
 
 ## Context
 
