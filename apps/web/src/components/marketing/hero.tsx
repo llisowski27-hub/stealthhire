@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/components/ui/button-link";
-import { ImportPreview } from "./import-preview";
+import { CandidateSpotlight } from "./candidate-spotlight";
 
 /** Landing hero: statement type, one soft light source, product in view. */
 export function Hero() {
@@ -42,7 +42,7 @@ export function Hero() {
             </div>
           </div>
 
-          <ImportPreview className="lg:translate-y-2" />
+          <CandidateSpotlight className="lg:translate-y-2" />
         </div>
       </div>
     </section>
