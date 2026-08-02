@@ -1,26 +1,178 @@
-import { ComponentGallery } from "@/components/dev/component-gallery";
-import { TokenGallery } from "@/components/dev/token-gallery";
+import { ButtonLink } from "@/components/ui/button-link";
+import { Bento } from "@/components/marketing/bento";
+import { Capabilities } from "@/components/marketing/capabilities";
+import { SearchPreview } from "@/components/marketing/search-preview";
+import { SELF_TAUGHT_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
+import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
+import { Comparison } from "@/components/marketing/comparison";
+import { Hero } from "@/components/marketing/hero";
+import { HowItWorks } from "@/components/marketing/how-it-works";
 
-/**
- * Temporary design-system review page. Replaced by the real product
- * surface once feature work begins.
- */
+type SectionProps = {
+  id?: string;
+  headingId: string;
+  title: string;
+  lede: string;
+  raised?: boolean;
+  children: React.ReactNode;
+};
+
+function Section({
+  id,
+  headingId,
+  title,
+  lede,
+  raised = false,
+  children,
+}: SectionProps) {
+  return (
+    <section
+      id={id}
+      aria-labelledby={headingId}
+      className={
+        raised
+          ? "scroll-mt-16 border-b border-edge bg-background-raised"
+          : "scroll-mt-16 border-b border-edge"
+      }
+    >
+      <div className="mx-auto w-full max-w-content px-6 py-24">
+        <h2
+          id={headingId}
+          className="text-display max-w-3xl text-3xl font-semibold md:text-4xl"
+        >
+          {title}
+        </h2>
+        <p className="mt-4 max-w-prose text-lg text-muted">{lede}</p>
+        <div className="mt-12">{children}</div>
+      </div>
+    </section>
+  );
+}
+
 export default function Home() {
   return (
-    <main className="flex-1 w-full max-w-content mx-auto px-6 py-16 md:py-24">
-      <header className="mb-16">
-        <p className="text-sm font-mono text-muted mb-4">stealthhire</p>
-        <h1 className="text-4xl font-semibold tracking-tight mb-4">
-          Proof over resume.
-        </h1>
-        <p className="text-lg text-muted max-w-prose">
-          Talent intelligence connecting hiring managers directly with
-          professionals through verified performance data.
-        </p>
-      </header>
+    <main className="flex-1 w-full">
+      <Hero />
 
-      <TokenGallery />
-      <ComponentGallery />
+      <Section
+        headingId="value-heading"
+        title="Every handoff costs a week"
+        lede="Finding people was never the hard part. The delay comes from what sits on top of it — relays, rescheduling, and context that thins out at every step."
+        raised
+      >
+        <Bento />
+      </Section>
+
+      <section
+        aria-labelledby="unconventional-heading"
+        className="border-b border-edge"
+      >
+        <div className="mx-auto w-full max-w-content px-6 py-24">
+          <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
+            <CandidateSpotlight
+              profile={SELF_TAUGHT_ARCHETYPE}
+              className="order-2 lg:order-1"
+            />
+            <div className="order-1 lg:order-2">
+              <h2
+                id="unconventional-heading"
+                className="text-display max-w-2xl text-3xl font-semibold md:text-4xl"
+              >
+                And the ones who don&apos;t look the part
+              </h2>
+              <p className="mt-4 max-w-prose text-lg text-muted">
+                Sort by university and this person never surfaces. They have no
+                degree — and a library running in forty million installs a
+                month, plus a Kaggle Grandmaster title held by a few hundred
+                people alive.
+              </p>
+              <p className="mt-4 max-w-prose text-muted">
+                A filter tuned for credentials is measuring the wrong thing.
+                Structured profiles let a hiring manager search on what someone
+                built, placed in, and shipped — whatever route they took to get
+                there.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <Section
+        headingId="search-heading"
+        title="Describe the person. Not the keyword."
+        lede="Keyword search is looking for a string. Write “Java” and you miss the backend engineer who has shipped Kotlin for six years, because they never typed the word."
+        raised
+      >
+        <SearchPreview className="mx-auto max-w-3xl" />
+        <p className="mx-auto mt-8 max-w-prose text-center text-muted">
+          Search reads project histories, repositories and publications, then
+          tells you which piece of evidence answered your brief — so you can
+          judge the match instead of trusting a ranking.
+        </p>
+      </Section>
+
+      <Section
+        headingId="capabilities-heading"
+        title="Where the current tools give up"
+        lede="Four things that stay broken no matter how good the search index gets."
+      >
+        <Capabilities />
+      </Section>
+
+      <Section
+        id="comparison"
+        headingId="comparison-heading"
+        title="The old way, and ours"
+        raised
+        lede="Same goal — the right person in the right role. The difference is how many steps it takes to get there."
+      >
+        <Comparison />
+      </Section>
+
+      <Section
+        headingId="how-heading"
+        title="Set it up once"
+        lede="Three steps, and no one standing between you and the person making the decision."
+      >
+        <HowItWorks />
+      </Section>
+
+      <Section
+        headingId="agencies-heading"
+        title="We're not here to delete recruiters"
+        lede="Agencies know their candidates better than any scraper does."
+        raised
+      >
+        <div className="grid gap-6 md:grid-cols-2">
+          <p className="text-muted">
+            On StealthHire they become talent providers: they contribute
+            pipelines, expand coverage, and earn referral revenue.
+          </p>
+          <p className="text-muted">
+            What they stop doing is standing in the middle of every
+            conversation and charging a percentage for the privilege.
+          </p>
+        </div>
+      </Section>
+
+      <section className="relative isolate overflow-hidden">
+        <div
+          aria-hidden="true"
+          className="absolute inset-x-0 bottom-0 -z-10 h-96 glow-accent rotate-180"
+        />
+        <div className="mx-auto w-full max-w-content px-6 py-28 text-center">
+          <h2 className="text-display mx-auto max-w-3xl text-3xl font-semibold md:text-5xl">
+            Build it once.
+            <br />
+            <span className="text-muted">Get messaged directly.</span>
+          </h2>
+          <div className="mt-10 flex justify-center">
+            <ButtonLink href="/profile" size="lg">
+              Build your profile
+            </ButtonLink>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

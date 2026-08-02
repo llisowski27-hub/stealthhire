@@ -18,6 +18,22 @@ const SIZE_CLASSES: Record<ButtonSize, string> = {
   lg: "h-11 px-5 text-base gap-2",
 };
 
+/** Shared visual classes so links can render as buttons (see ButtonLink). */
+export function buttonClassName(
+  variant: ButtonVariant = "primary",
+  size: ButtonSize = "md",
+  className?: string,
+): string {
+  return cn(
+    "inline-flex items-center justify-center rounded-md font-medium",
+    "transition-colors select-none",
+    "disabled:opacity-50 disabled:pointer-events-none",
+    VARIANT_CLASSES[variant],
+    SIZE_CLASSES[size],
+    className,
+  );
+}
+
 export type ButtonProps = ComponentPropsWithRef<"button"> & {
   variant?: ButtonVariant;
   size?: ButtonSize;
@@ -40,14 +56,7 @@ export function Button({
       type={type}
       disabled={disabled || isLoading}
       aria-busy={isLoading || undefined}
-      className={cn(
-        "inline-flex items-center justify-center rounded-md font-medium",
-        "transition-colors select-none",
-        "disabled:opacity-50 disabled:pointer-events-none",
-        VARIANT_CLASSES[variant],
-        SIZE_CLASSES[size],
-        className,
-      )}
+      className={buttonClassName(variant, size, className)}
       {...rest}
     >
       {isLoading && <Spinner />}

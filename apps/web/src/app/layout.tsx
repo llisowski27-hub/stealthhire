@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SiteFooter } from "@/components/site-footer";
+import { SiteHeader } from "@/components/site-header";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s · StealthHire",
   },
   description:
-    "Talent intelligence platform connecting hiring managers directly with professionals through verified performance data.",
+    "One candidate profile mapped from LinkedIn, your CV and your repositories — so hiring managers can find the right person and message them directly.",
 };
 
 export default function RootLayout({
@@ -31,7 +33,11 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      <body className="min-h-full flex flex-col">
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </body>
     </html>
   );
 }
