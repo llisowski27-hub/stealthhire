@@ -140,25 +140,7 @@ export default function Home() {
         <HowItWorks />
       </Section>
 
-      <Section
-        headingId="agencies-heading"
-        title="We're not here to delete recruiters"
-        lede="Agencies know their candidates better than any scraper does."
-        raised
-      >
-        <div className="grid gap-6 md:grid-cols-2">
-          <p className="text-muted">
-            On StealthHire they become talent providers: they contribute
-            pipelines, expand coverage, and earn referral revenue.
-          </p>
-          <p className="text-muted">
-            What they stop doing is standing in the middle of every
-            conversation and charging a percentage for the privilege.
-          </p>
-        </div>
-      </Section>
-
-      <section className="relative isolate overflow-hidden">
+      <section className="relative isolate overflow-hidden border-t border-edge">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 bottom-0 -z-10 h-96 glow-accent rotate-180"
