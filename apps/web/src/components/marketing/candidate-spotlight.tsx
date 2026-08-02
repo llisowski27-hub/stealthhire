@@ -1,21 +1,7 @@
 import { cn } from "@/lib/cn";
 import type { CandidateArchetype } from "./candidate-archetypes";
+import { HiddenIdentity } from "./hidden-identity";
 import { InstitutionMark } from "./institution-mark";
-
-/** Blurred stand-in for a person: head and shoulders, no features. */
-function HiddenIdentity() {
-  return (
-    <div
-      aria-hidden="true"
-      className="relative size-12 shrink-0 overflow-hidden rounded-full border border-edge bg-surface-3"
-    >
-      <div className="absolute inset-0 blur-[6px]">
-        <div className="absolute left-1/2 top-2 size-4 -translate-x-1/2 rounded-full bg-muted/50" />
-        <div className="absolute left-1/2 top-7 h-6 w-9 -translate-x-1/2 rounded-t-full bg-muted/50" />
-      </div>
-    </div>
-  );
-}
 
 export type CandidateSpotlightProps = {
   profile: CandidateArchetype;
@@ -50,7 +36,7 @@ export function CandidateSpotlight({
 
       <div className="flex flex-col gap-5 p-5">
         <div className="flex items-center gap-4">
-          <HiddenIdentity />
+          <HiddenIdentity className="size-12" />
           <div className="min-w-0 flex-1">
             <div
               aria-hidden="true"

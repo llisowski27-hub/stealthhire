@@ -1,5 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Bento } from "@/components/marketing/bento";
+import { Capabilities } from "@/components/marketing/capabilities";
+import { SearchPreview } from "@/components/marketing/search-preview";
 import { SELF_TAUGHT_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
 import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
 import { Comparison } from "@/components/marketing/comparison";
@@ -96,9 +98,32 @@ export default function Home() {
       </section>
 
       <Section
+        headingId="search-heading"
+        title="Describe the person. Not the keyword."
+        lede="Keyword search is looking for a string. Write “Java” and you miss the backend engineer who has shipped Kotlin for six years, because they never typed the word."
+        raised
+      >
+        <SearchPreview className="mx-auto max-w-3xl" />
+        <p className="mx-auto mt-8 max-w-prose text-center text-muted">
+          Search reads project histories, repositories and publications, then
+          tells you which piece of evidence answered your brief — so you can
+          judge the match instead of trusting a ranking.
+        </p>
+      </Section>
+
+      <Section
+        headingId="capabilities-heading"
+        title="Where the current tools give up"
+        lede="Four things that stay broken no matter how good the search index gets."
+      >
+        <Capabilities />
+      </Section>
+
+      <Section
         id="comparison"
         headingId="comparison-heading"
         title="The old way, and ours"
+        raised
         lede="Same goal — the right person in the right role. The difference is how many steps it takes to get there."
       >
         <Comparison />
@@ -108,7 +133,6 @@ export default function Home() {
         headingId="how-heading"
         title="Set it up once"
         lede="Three steps, and no one standing between you and the person making the decision."
-        raised
       >
         <HowItWorks />
       </Section>
@@ -117,6 +141,7 @@ export default function Home() {
         headingId="agencies-heading"
         title="We're not here to delete recruiters"
         lede="Agencies know their candidates better than any scraper does."
+        raised
       >
         <div className="grid gap-6 md:grid-cols-2">
           <p className="text-muted">
