@@ -60,10 +60,14 @@ export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
 };
 
 /**
- * The non-target path: real deal exposure and hard credentials, from a
- * university that never appears on a target list. Education sits last
- * deliberately — it is the first thing a CV screen sorts on and the least
- * informative thing here.
+ * A candidate whose record is strong but whose university does not appear
+ * on a bank's target list.
+ *
+ * The card states the candidate's achievements only. Screening practice is
+ * an industry problem, not an attribute of the person, so no entry here
+ * labels them as "non-target" — that argument belongs in the surrounding
+ * copy. Education sits last because it is the first field a CV screen
+ * sorts on and the least informative one here.
  */
 export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
   role: "Off-cycle M&A analyst · Frankfurt",
@@ -86,7 +90,7 @@ export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
     {
       mark: "BSc",
       headline: "BSc Economics — First class",
-      detail: "Non-target university · no spring week offer",
+      detail: "Class of 2026 · dissertation on leveraged credit",
     },
   ],
 };

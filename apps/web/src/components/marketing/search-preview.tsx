@@ -8,7 +8,7 @@ type Match = {
 };
 
 const QUERY =
-  "Someone who has run a live sell-side process and can build an LBO unassisted. I don't care where they studied";
+  "Someone who has worked a live sell-side process and can build an LBO unassisted, regardless of university";
 
 /** Illustrative results. Identities are never rendered. */
 const MATCHES: readonly Match[] = [

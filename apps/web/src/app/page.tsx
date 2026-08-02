@@ -81,20 +81,20 @@ export default function Home() {
                 id="unconventional-heading"
                 className="text-display max-w-2xl text-3xl font-semibold md:text-4xl"
               >
-                And the ones the CV screen bins first
+                Beyond the target list
               </h2>
               <p className="mt-4 max-w-prose text-lg text-muted">
-                Filter on university and this candidate is gone before anyone
-                reads the rest. Two live sell-side processes. CFA Level I passed
-                first attempt, sat a year early. Top hundred in the Financial
-                Modeling World Cup. No spring week — the banks never came to
-                their campus.
+                Most screens sort on institution before anything else. A record
+                like this one — two live sell-side processes, a first-class
+                degree, CFA Level I at the first attempt, a top-hundred finish
+                in the Financial Modeling World Cup — is often set aside before
+                any of it is read, because the university is not on the list.
               </p>
               <p className="mt-4 max-w-prose text-muted">
-                A target list is a proxy for ability, and a poor one. The people
-                who found deal experience without the pedigree are the ones who
-                went looking for it, and they are the most mispriced talent on
-                the street.
+                Institution is a proxy for ability, and an imprecise one.
+                Candidates who secured deal experience without on-campus
+                recruitment went and found it. A structured profile lets them be
+                assessed on that record.
               </p>
             </div>
           </div>
