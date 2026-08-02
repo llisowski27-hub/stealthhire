@@ -1,19 +1,19 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Bento } from "@/components/marketing/bento";
-import { Capabilities } from "@/components/marketing/capabilities";
-import { SearchPreview } from "@/components/marketing/search-preview";
-import { SourceLogos } from "@/components/marketing/source-logos";
-import { SELF_TAUGHT_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
+import { NON_TARGET_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
 import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
+import { Capabilities } from "@/components/marketing/capabilities";
 import { Comparison } from "@/components/marketing/comparison";
 import { Hero } from "@/components/marketing/hero";
-import { HowItWorks } from "@/components/marketing/how-it-works";
+import { SearchPreview } from "@/components/marketing/search-preview";
+import { SourceLogos } from "@/components/marketing/source-logos";
 
 type SectionProps = {
   id?: string;
   headingId: string;
   title: string;
-  lede: string;
+  /** One short line. Sections carry a single idea; prose belongs elsewhere. */
+  lede?: string;
   raised?: boolean;
   children: React.ReactNode;
 };
@@ -36,14 +36,14 @@ function Section({
           : "scroll-mt-16 border-b border-edge"
       }
     >
-      <div className="mx-auto w-full max-w-content px-6 py-24">
+      <div className="mx-auto w-full max-w-content px-6 py-20">
         <h2
           id={headingId}
           className="text-display max-w-3xl text-3xl font-semibold md:text-4xl"
         >
           {title}
         </h2>
-        <p className="mt-4 max-w-prose text-lg text-muted">{lede}</p>
+        {lede && <p className="mt-3 max-w-prose text-lg text-muted">{lede}</p>}
         <div className="mt-12">{children}</div>
       </div>
     </section>
@@ -59,21 +59,29 @@ export default function Home() {
 
       <Section
         headingId="value-heading"
-        title="Every handoff costs a week"
-        lede="Finding people was never the hard part. The delay comes from what sits on top of it — relays, rescheduling, and context that thins out at every step."
+        title="One profile. Built to be searched."
         raised
       >
         <Bento />
       </Section>
 
+      <Section
+        id="comparison"
+        headingId="search-heading"
+        title="Describe the person. Not the keyword."
+        lede="Search on what someone did, not on the words they happened to type."
+      >
+        <SearchPreview className="mx-auto max-w-3xl" />
+      </Section>
+
       <section
         aria-labelledby="unconventional-heading"
-        className="border-b border-edge"
+        className="border-b border-edge bg-background-raised"
       >
-        <div className="mx-auto w-full max-w-content px-6 py-24">
+        <div className="mx-auto w-full max-w-content px-6 py-20">
           <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
             <CandidateSpotlight
-              profile={SELF_TAUGHT_ARCHETYPE}
+              profile={NON_TARGET_ARCHETYPE}
               className="order-2 lg:order-1"
             />
             <div className="order-1 lg:order-2">
@@ -81,71 +89,36 @@ export default function Home() {
                 id="unconventional-heading"
                 className="text-display max-w-2xl text-3xl font-semibold md:text-4xl"
               >
-                And the ones who don&apos;t look the part
+                Beyond the target list
               </h2>
-              <p className="mt-4 max-w-prose text-lg text-muted">
-                Sort by university and this person never surfaces. They have no
-                degree — and a library running in forty million installs a
-                month, plus a Kaggle Grandmaster title held by a few hundred
-                people alive.
-              </p>
-              <p className="mt-4 max-w-prose text-muted">
-                A filter tuned for credentials is measuring the wrong thing.
-                Structured profiles let a hiring manager search on what someone
-                built, placed in, and shipped — whatever route they took to get
-                there.
+              <p className="mt-3 max-w-prose text-lg text-muted">
+                Two live sell-sides, a first-class degree, CFA Level I at the
+                first attempt — set aside because the university is not on a
+                list.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <Section
-        headingId="search-heading"
-        title="Describe the person. Not the keyword."
-        lede="Keyword search is looking for a string. Write “Java” and you miss the backend engineer who has shipped Kotlin for six years, because they never typed the word."
-        raised
-      >
-        <SearchPreview className="mx-auto max-w-3xl" />
-        <p className="mx-auto mt-8 max-w-prose text-center text-muted">
-          Search reads project histories, repositories and publications, then
-          tells you which piece of evidence answered your brief — so you can
-          judge the match instead of trusting a ranking.
-        </p>
-      </Section>
-
-      <Section
-        headingId="capabilities-heading"
-        title="Where the current tools give up"
-        lede="Four things that stay broken no matter how good the search index gets."
-      >
+      <Section headingId="capabilities-heading" title="What the tools miss">
         <Capabilities />
       </Section>
 
       <Section
-        id="comparison"
         headingId="comparison-heading"
         title="The old way, and ours"
         raised
-        lede="Same goal — the right person in the right role. The difference is how many steps it takes to get there."
       >
         <Comparison />
       </Section>
 
-      <Section
-        headingId="how-heading"
-        title="Set it up once"
-        lede="Three steps, and no one standing between you and the person making the decision."
-      >
-        <HowItWorks />
-      </Section>
-
-      <section className="relative isolate overflow-hidden border-t border-edge">
+      <section className="relative isolate overflow-hidden">
         <div
           aria-hidden="true"
           className="absolute inset-x-0 bottom-0 -z-10 h-96 glow-accent rotate-180"
         />
-        <div className="mx-auto w-full max-w-content px-6 py-28 text-center">
+        <div className="mx-auto w-full max-w-content px-6 py-24 text-center">
           <h2 className="text-display mx-auto max-w-3xl text-3xl font-semibold md:text-5xl">
             Build it once.
             <br />

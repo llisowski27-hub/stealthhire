@@ -8,24 +8,24 @@ type Match = {
 };
 
 const QUERY =
-  "Someone who scaled a database to millions of requests a day and led a monolith to microservices migration";
+  "Someone who has worked a live sell-side process and can build an LBO unassisted, regardless of university";
 
 /** Illustrative results. Identities are never rendered. */
 const MATCHES: readonly Match[] = [
   {
-    role: "Backend engineer · Kraków",
-    evidence: "Sharded Postgres to 4.1M req/day · 11 services extracted",
-    sources: "commit history · conference talk",
+    role: "Off-cycle analyst · Frankfurt",
+    evidence: "Two sell-sides closed — €140m and €380m EV",
+    sources: "deal list · referee",
   },
   {
-    role: "Platform engineer · remote",
-    evidence: "Wrote the migration playbook their company open-sourced",
-    sources: "GitHub · engineering blog",
+    role: "Summer analyst · London",
+    evidence: "Built the operating model on a £220m take-private",
+    sources: "CV · modelling test",
   },
   {
-    role: "Staff engineer · Berlin",
-    evidence: "Cut p99 latency 8× during a monolith split",
-    sources: "post-mortem write-up · repo history",
+    role: "Final-year student · Warsaw",
+    evidence: "FMWC top 100 · CFA Level I, first attempt",
+    sources: "competition results · CFA registry",
   },
 ];
 

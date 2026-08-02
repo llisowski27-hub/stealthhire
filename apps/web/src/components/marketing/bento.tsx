@@ -1,110 +1,27 @@
-import { cn } from "@/lib/cn";
+import { ProfileFlow } from "./profile-flow";
 
-const SIGNAL_CHIPS = [
-  "Career history",
-  "Open source",
-  "Certifications",
-  "Publications",
-  "Olympiads",
-  "Hackathons",
-  "Shipped products",
-  "Patents",
-] as const;
-
-const MAPPED_SOURCES = [
-  "LinkedIn career history",
-  "Your CV, parsed into structured fields",
-  "GitHub repositories and languages",
-  "Awards, olympiads and hackathons you add",
-] as const;
-
-function Cell({
-  className,
-  children,
-}: {
-  className?: string;
-  children: React.ReactNode;
-}) {
-  return (
-    <div
-      className={cn(
-        "flex flex-col rounded-xl border border-edge bg-surface-1 p-6",
-        className,
-      )}
-    >
-      {children}
-    </div>
-  );
-}
-
-/** Value propositions as a varied bento grid rather than uniform cards. */
+/**
+ * The section's supporting content: the source-to-profile flow, and the
+ * one figure worth stating on its own. Deliberately not a uniform grid of
+ * cards — the flow carries its own vertical rhythm.
+ */
 export function Bento() {
   return (
-    <div className="grid gap-4 md:grid-cols-3">
-      <Cell className="md:col-span-2">
-        <h3 className="text-lg font-medium">One profile, every source</h3>
-        <p className="mt-2 max-w-prose text-sm text-muted">
-          Your CV is a starting point, not the whole story. We pull career
-          history together with the work and results that no CV field has room
-          for — and keep it current so you write it once.
-        </p>
-        <ul className="mt-6 flex flex-wrap gap-2">
-          {SIGNAL_CHIPS.map((chip) => (
-            <li
-              key={chip}
-              className="rounded-full border border-edge bg-surface-2 px-3 py-1.5 text-xs text-foreground"
-            >
-              {chip}
-            </li>
-          ))}
-        </ul>
-      </Cell>
+    <div className="grid gap-12 lg:grid-cols-[1.45fr_1fr] lg:gap-16">
+      <ProfileFlow />
 
-      <Cell className="justify-between">
-        <div>
-          <h3 className="text-lg font-medium">Steps in between</h3>
-          <p className="mt-2 text-sm text-muted">
-            Hiring manager to candidate. That&apos;s the whole chain.
-          </p>
-        </div>
+      <div className="flex h-fit flex-col rounded-xl border border-edge bg-surface-1 p-6">
+        <h3 className="text-lg font-medium">Steps in between</h3>
+        <p className="mt-2 text-sm text-muted">
+          Hiring manager to candidate. That is the whole chain.
+        </p>
         <p
           className="text-display mt-8 text-6xl font-semibold text-accent"
           aria-label="Zero intermediaries"
         >
           0
         </p>
-      </Cell>
-
-      <Cell>
-        <h3 className="text-lg font-medium">Answer once</h3>
-        <p className="mt-2 text-sm text-muted">
-          No repeating your background to a sourcer, then a recruiter, then the
-          person who actually makes the decision.
-        </p>
-      </Cell>
-
-      <Cell className="md:col-span-2">
-        <h3 className="text-lg font-medium">Nothing to retype</h3>
-        <p className="mt-2 max-w-prose text-sm text-muted">
-          Your history already exists in a dozen places. We map it into one
-          profile and keep it in sync, so you are not rewriting the same
-          background for every application.
-        </p>
-        <ul className="mt-6 grid gap-x-6 gap-y-2 sm:grid-cols-2">
-          {MAPPED_SOURCES.map((source) => (
-            <li
-              key={source}
-              className="flex items-center gap-2.5 text-sm text-muted"
-            >
-              <span
-                className="size-1.5 shrink-0 rounded-full bg-accent"
-                aria-hidden="true"
-              />
-              {source}
-            </li>
-          ))}
-        </ul>
-      </Cell>
+      </div>
     </div>
   );
 }

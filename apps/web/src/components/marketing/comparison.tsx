@@ -9,35 +9,23 @@ type ComparisonRow = {
 const ROWS: readonly ComparisonRow[] = [
   {
     dimension: "First contact",
-    traditional:
-      "Days of relay — sourcer to recruiter to candidate and back again",
-    stealthhire: "Immediate. The hiring manager writes to the candidate",
+    traditional: "Days of relay",
+    stealthhire: "Immediate, and direct",
   },
   {
     dimension: "Steps between",
-    traditional: "Three or four people carrying the conversation",
+    traditional: "Three or four people",
     stealthhire: "None",
   },
   {
-    dimension: "Context",
-    traditional: "A second-hand summary of the role, and of the candidate",
-    stealthhire: "Both sides explain themselves, in their own words",
-  },
-  {
-    dimension: "Candidate data",
-    traditional: "A CV, reformatted for whichever filter is running",
-    stealthhire:
-      "LinkedIn, CV and repositories mapped into one profile, kept current",
-  },
-  {
-    dimension: "Repetition",
-    traditional: "Your background retyped for every agency and portal",
-    stealthhire: "Built once, reused everywhere",
+    dimension: "What you screen",
+    traditional: "A CV formatted for a filter",
+    stealthhire: "The work, structured and searchable",
   },
   {
     dimension: "Cost",
-    traditional: "15–30% of first-year salary per placement",
-    stealthhire: "Platform access — no percentage-of-salary fees",
+    traditional: "15–30% of first-year salary",
+    stealthhire: "Platform access",
   },
 ];
 
