@@ -2,6 +2,7 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Bento } from "@/components/marketing/bento";
 import { Capabilities } from "@/components/marketing/capabilities";
 import { SearchPreview } from "@/components/marketing/search-preview";
+import { SourceLogos } from "@/components/marketing/source-logos";
 import { SELF_TAUGHT_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
 import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
 import { Comparison } from "@/components/marketing/comparison";
@@ -53,6 +54,8 @@ export default function Home() {
   return (
     <main className="flex-1 w-full">
       <Hero />
+
+      <SourceLogos />
 
       <Section
         headingId="value-heading"

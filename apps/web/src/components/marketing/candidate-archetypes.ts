@@ -45,6 +45,8 @@ export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
     },
     {
       mark: "GH",
+      logoSrc: "/logos/github.svg",
+      name: "GitHub",
       headline: "monte-carlo-engine",
       detail: "3.1k stars · GPU path simulation",
     },
@@ -68,11 +70,15 @@ export const SELF_TAUGHT_ARCHETYPE: CandidateArchetype = {
     },
     {
       mark: "GH",
+      logoSrc: "/logos/github.svg",
+      name: "GitHub",
       headline: "tensor-compile",
       detail: "18k stars · 40M downloads a month",
     },
     {
       mark: "K",
+      logoSrc: "/logos/kaggle.svg",
+      name: "Kaggle",
       headline: "Kaggle Grandmaster",
       detail: "Top 30 worldwide · 4 gold medals",
     },
