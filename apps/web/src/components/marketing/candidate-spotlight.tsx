@@ -1,5 +1,6 @@
 import { cn } from "@/lib/cn";
 import type { CandidateArchetype } from "./candidate-archetypes";
+import { InstitutionMark } from "./institution-mark";
 
 /** Blurred stand-in for a person: head and shoulders, no features. */
 function HiddenIdentity() {
@@ -32,8 +33,11 @@ export function CandidateSpotlight({
   return (
     <div
       className={cn(
-        "rounded-xl border border-edge bg-surface-1/80 shadow-raised",
-        "backdrop-blur-sm",
+        // min-w-0 so the card can shrink inside a grid/flex parent, whose
+        // items default to min-width:auto and would otherwise be sized by
+        // the widest nowrap descendant.
+        "min-w-0 rounded-xl border border-edge bg-surface-1/80",
+        "shadow-raised backdrop-blur-sm",
         className,
       )}
     >
@@ -60,19 +64,17 @@ export function CandidateSpotlight({
           {profile.credentials.map((credential) => (
             <div
               key={credential.headline}
-              className="rounded-lg border border-edge bg-surface-2/60 px-3 py-2.5"
+              className="flex items-center gap-3 rounded-lg border border-edge bg-surface-2/60 px-3 py-2.5"
             >
-              <dt className="font-mono text-[0.6875rem] text-accent">
-                {credential.kind}
-              </dt>
-              <dd className="mt-1">
-                <p className="truncate text-sm font-medium text-foreground">
+              <InstitutionMark mark={credential.mark} />
+              <div className="min-w-0 flex-1">
+                <dt className="truncate text-sm font-medium text-foreground">
                   {credential.headline}
-                </p>
-                <p className="truncate text-xs text-muted">
+                </dt>
+                <dd className="truncate text-xs text-muted">
                   {credential.detail}
-                </p>
-              </dd>
+                </dd>
+              </div>
             </div>
           ))}
         </dl>
