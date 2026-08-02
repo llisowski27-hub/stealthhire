@@ -1,34 +1,5 @@
 import { cn } from "@/lib/cn";
-
-type Credential = {
-  headline: string;
-  detail: string;
-  kind: string;
-};
-
-/** Illustrative credentials — no identity attached, by design. */
-const CREDENTIALS: readonly Credential[] = [
-  {
-    kind: "education",
-    headline: "University of Oxford",
-    detail: "MSc Computer Science — Distinction",
-  },
-  {
-    kind: "experience",
-    headline: "Senior Quantitative Developer",
-    detail: "Systematic trading fund · 4 yrs · derivatives pricing",
-  },
-  {
-    kind: "open source",
-    headline: "monte-carlo-engine",
-    detail: "3.1k stars · GPU path simulation",
-  },
-  {
-    kind: "olympiad",
-    headline: "Int. Olympiad in Informatics",
-    detail: "2nd place, 2019",
-  },
-];
+import type { CandidateArchetype } from "./candidate-archetypes";
 
 /** Blurred stand-in for a person: head and shoulders, no features. */
 function HiddenIdentity() {
@@ -45,12 +16,19 @@ function HiddenIdentity() {
   );
 }
 
+export type CandidateSpotlightProps = {
+  profile: CandidateArchetype;
+  className?: string;
+};
+
 /**
- * Marketing preview of a strong candidate profile with the identity
- * withheld. Presentational only — the credentials are illustrative and
- * belong to no one.
+ * Marketing preview of a candidate profile with the identity withheld.
+ * Presentational only — credentials are illustrative and belong to no one.
  */
-export function CandidateSpotlight({ className }: { className?: string }) {
+export function CandidateSpotlight({
+  profile,
+  className,
+}: CandidateSpotlightProps) {
   return (
     <div
       className={cn(
@@ -74,14 +52,12 @@ export function CandidateSpotlight({ className }: { className?: string }) {
               aria-hidden="true"
               className="h-4 w-36 rounded-full bg-muted/25 blur-[3px]"
             />
-            <p className="mt-2 truncate text-sm text-muted">
-              Quantitative developer · London
-            </p>
+            <p className="mt-2 truncate text-sm text-muted">{profile.role}</p>
           </div>
         </div>
 
         <dl className="flex flex-col gap-2">
-          {CREDENTIALS.map((credential) => (
+          {profile.credentials.map((credential) => (
             <div
               key={credential.headline}
               className="rounded-lg border border-edge bg-surface-2/60 px-3 py-2.5"

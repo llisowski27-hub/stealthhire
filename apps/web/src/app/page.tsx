@@ -1,5 +1,7 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Bento } from "@/components/marketing/bento";
+import { SELF_TAUGHT_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
+import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
 import { Comparison } from "@/components/marketing/comparison";
 import { Hero } from "@/components/marketing/hero";
 import { HowItWorks } from "@/components/marketing/how-it-works";
@@ -58,6 +60,40 @@ export default function Home() {
       >
         <Bento />
       </Section>
+
+      <section
+        aria-labelledby="unconventional-heading"
+        className="border-b border-edge"
+      >
+        <div className="mx-auto w-full max-w-content px-6 py-24">
+          <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
+            <CandidateSpotlight
+              profile={SELF_TAUGHT_ARCHETYPE}
+              className="order-2 lg:order-1"
+            />
+            <div className="order-1 lg:order-2">
+              <h2
+                id="unconventional-heading"
+                className="text-display max-w-2xl text-3xl font-semibold md:text-4xl"
+              >
+                And the ones who don&apos;t look the part
+              </h2>
+              <p className="mt-4 max-w-prose text-lg text-muted">
+                Sort by university and this person never surfaces. They have no
+                degree — and a library running in forty million installs a
+                month, plus a Kaggle Grandmaster title held by a few hundred
+                people alive.
+              </p>
+              <p className="mt-4 max-w-prose text-muted">
+                A filter tuned for credentials is measuring the wrong thing.
+                Structured profiles let a hiring manager search on what someone
+                built, placed in, and shipped — whatever route they took to get
+                there.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <Section
         id="comparison"

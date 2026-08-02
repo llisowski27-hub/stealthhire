@@ -1,4 +1,5 @@
 import { ButtonLink } from "@/components/ui/button-link";
+import { CREDENTIALED_ARCHETYPE } from "./candidate-archetypes";
 import { CandidateSpotlight } from "./candidate-spotlight";
 
 /** Landing hero: statement type, one soft light source, product in view. */
@@ -42,7 +43,10 @@ export function Hero() {
             </div>
           </div>
 
-          <CandidateSpotlight className="lg:translate-y-2" />
+          <CandidateSpotlight
+            profile={CREDENTIALED_ARCHETYPE}
+            className="lg:translate-y-2"
+          />
         </div>
       </div>
     </section>
