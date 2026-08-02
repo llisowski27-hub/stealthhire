@@ -8,35 +8,45 @@ type FlowStep = {
 const SOURCES: readonly FlowStep[] = [
   {
     label: "LinkedIn",
-    detail: "Roles, dates, education and skills",
+    detail:
+      "Where you have been. Necessary — and the part every other candidate has too.",
   },
   {
     label: "Your CV",
-    detail: "Parsed into structured fields, not a stored PDF",
+    detail:
+      "Written to survive a filter, so it buries your best work in the middle of a page. We lead with it instead.",
   },
   {
-    label: "Transactions and mandates",
-    detail: "What you worked on, its size, and your role on it",
+    label: "The work behind the job title",
+    detail:
+      "Two people share a title and did entirely different work. This is the half that separates them: what you touched, and what moved because you were on it.",
   },
   {
     label: "Credentials and competitions",
-    detail: "CFA progress, modelling placements, olympiads",
+    detail:
+      "A line at the bottom of a page is worth nothing. Weighted properly, what it cost you to earn becomes a reason someone opens your profile first.",
   },
 ];
 
+const OUTCOME: FlowStep = {
+  label: "Built for the person searching",
+  detail:
+    "Recruiters read the work, not the layout — minutes instead of days, and a shorter list worth calling. You get found for the role you want rather than the one your last title implies.",
+};
+
 /**
- * Vertical flow from source material to a single profile. Rows reveal top
- * to bottom as the block scrolls into view — see `.reveal-in` in
- * globals.css, which is scroll-driven, needs no client JavaScript, and
- * degrades to static content where unsupported or when the visitor
- * prefers reduced motion.
+ * Vertical flow from source material to a profile a recruiter can act on.
+ * Rows reveal top to bottom as the block scrolls into view — see
+ * `.reveal-in` in globals.css, which is scroll-driven, needs no client
+ * JavaScript, and degrades to static content where unsupported or when the
+ * visitor prefers reduced motion.
  */
 export function ProfileFlow({ className }: { className?: string }) {
   return (
     <div className={cn("relative", className)}>
       <span
         aria-hidden="true"
-        className="absolute left-[3px] top-2 bottom-10 w-px bg-edge"
+        className="absolute left-[3px] top-2 bottom-16 w-px bg-edge"
       />
 
       <ol className="flex flex-col gap-7">
@@ -49,7 +59,9 @@ export function ProfileFlow({ className }: { className?: string }) {
             <p className="text-sm font-medium text-foreground">
               {source.label}
             </p>
-            <p className="mt-1 text-sm text-muted">{source.detail}</p>
+            <p className="mt-1 max-w-prose text-sm text-muted">
+              {source.detail}
+            </p>
           </li>
         ))}
       </ol>
@@ -59,11 +71,8 @@ export function ProfileFlow({ className }: { className?: string }) {
           aria-hidden="true"
           className="absolute left-0 top-1.5 size-[7px] rounded-full bg-accent ring-4 ring-accent/15"
         />
-        <p className="text-sm font-medium text-accent">One profile</p>
-        <p className="mt-1 text-sm text-muted">
-          Structured, searchable, and current — written once rather than
-          rewritten for every application.
-        </p>
+        <p className="text-sm font-medium text-accent">{OUTCOME.label}</p>
+        <p className="mt-1 max-w-prose text-sm text-muted">{OUTCOME.detail}</p>
       </div>
     </div>
   );

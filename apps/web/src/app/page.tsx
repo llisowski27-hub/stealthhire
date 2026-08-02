@@ -59,8 +59,8 @@ export default function Home() {
 
       <Section
         headingId="value-heading"
-        title="Every handoff costs a week"
-        lede="Finding people was never the hard part. The delay comes from what sits on top of it — relays, rescheduling, and context that thins out at every step."
+        title="Less time searching. A better list at the end of it."
+        lede="Knowing the right person exists was never the hard part. The cost sits in the relays in between, and in profiles that make you read around a layout to work out what somebody actually did."
         raised
       >
         <Bento />
