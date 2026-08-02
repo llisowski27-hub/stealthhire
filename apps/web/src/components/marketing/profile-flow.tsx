@@ -14,7 +14,7 @@ const SOURCES: readonly FlowStep[] = [
   },
   {
     label: "Credentials and competitions",
-    detail: "A reason to call, not a footnote",
+    detail: "Impact up front, not buried at the bottom",
   },
 ];
 
