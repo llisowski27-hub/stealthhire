@@ -6,32 +6,21 @@ type FlowStep = {
 };
 
 const SOURCES: readonly FlowStep[] = [
+  { label: "LinkedIn", detail: "Where you have been" },
+  { label: "Your CV", detail: "Your best work, moved to the top" },
   {
-    label: "LinkedIn",
-    detail:
-      "Where you have been. Necessary — and the part every other candidate has too.",
-  },
-  {
-    label: "Your CV",
-    detail:
-      "Written to survive a filter, so it buries your best work in the middle of a page. We lead with it instead.",
-  },
-  {
-    label: "The work behind the job title",
-    detail:
-      "Two people share a title and did entirely different work. This is the half that separates them: what you touched, and what moved because you were on it.",
+    label: "The work behind the title",
+    detail: "What you did, not what you were called",
   },
   {
     label: "Credentials and competitions",
-    detail:
-      "A line at the bottom of a page is worth nothing. Weighted properly, what it cost you to earn becomes a reason someone opens your profile first.",
+    detail: "Weighted, not buried at the bottom",
   },
 ];
 
 const OUTCOME: FlowStep = {
   label: "Built for the person searching",
-  detail:
-    "Recruiters read the work, not the layout — minutes instead of days, and a shorter list worth calling. You get found for the role you want rather than the one your last title implies.",
+  detail: "Found in minutes, for the role you actually want",
 };
 
 /**

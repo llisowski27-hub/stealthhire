@@ -27,10 +27,8 @@ export function Hero() {
             </h1>
 
             <p className="mt-8 max-w-prose text-lg text-muted">
-              Bring your LinkedIn and your CV. StealthHire maps them into one
-              profile — together with the work, awards and results a CV has no
-              room for — and puts hiring managers one message away. No
-              recruiter relay, no waiting a week for an introduction.
+              Your work, structured so hiring managers can search it — and
+              message you directly.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
