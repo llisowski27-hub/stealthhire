@@ -18,27 +18,21 @@ describe("verification tiers", () => {
 
   it("treats only self-declared claims as unconfirmed", () => {
     expect(isConfirmed("registry")).toBe(true);
-    expect(isConfirmed("attested")).toBe(true);
     expect(isConfirmed("sourced")).toBe(true);
     expect(isConfirmed("self_declared")).toBe(false);
   });
 
-  it("ranks public record above attestation, and both above self-declared", () => {
-    const sorted = ["self_declared", "sourced", "registry", "attested"]
+  it("ranks public record above connected sources, and both above self-declared", () => {
+    const sorted = ["self_declared", "sourced", "registry"]
       .slice()
       .sort(byEvidenceStrength as never);
-    expect(sorted).toEqual([
-      "registry",
-      "attested",
-      "sourced",
-      "self_declared",
-    ]);
+    expect(sorted).toEqual(["registry", "sourced", "self_declared"]);
   });
 
-  it("marks the zero-effort tiers as automatic", () => {
-    expect(VERIFICATION_TIER_META.registry.automatic).toBe(true);
-    expect(VERIFICATION_TIER_META.sourced.automatic).toBe(true);
-    expect(VERIFICATION_TIER_META.attested.automatic).toBe(false);
+  it("requires no human effort for any supported tier", () => {
+    for (const tier of VERIFICATION_TIERS) {
+      expect(VERIFICATION_TIER_META[tier].automatic).toBe(true);
+    }
   });
 });
 
@@ -47,20 +41,19 @@ describe("summarize", () => {
     expect(summarize([])).toEqual({
       total: 0,
       confirmed: 0,
-      byTier: { registry: 0, attested: 0, sourced: 0, self_declared: 0 },
+      byTier: { registry: 0, sourced: 0, self_declared: 0 },
     });
   });
 
   it("reports composition rather than a single verified flag", () => {
     const summary = summarize([
       "registry",
-      "attested",
       "sourced",
       "self_declared",
       "self_declared",
     ]);
-    expect(summary.total).toBe(5);
-    expect(summary.confirmed).toBe(3);
+    expect(summary.total).toBe(4);
+    expect(summary.confirmed).toBe(2);
     expect(summary.byTier.self_declared).toBe(2);
   });
 });

@@ -7,8 +7,7 @@ import {
 
 const TIER_CLASSES: Record<VerificationTier, string> = {
   registry: "border-accent/30 bg-accent/10 text-accent",
-  attested: "border-accent/30 bg-accent/10 text-accent",
-  sourced: "border-edge bg-surface-2 text-foreground",
+  sourced: "border-accent/20 bg-accent/[0.06] text-accent-soft",
   self_declared: "border-edge bg-surface-2 text-muted",
 };
 
@@ -31,12 +30,6 @@ function TierIcon({ tier }: { tier: VerificationTier }) {
         <svg {...shared}>
           <path d="M1.5 8.5L4 11l5.5-6" />
           <path d="M7 11l1.5 1.5L14.5 5" />
-        </svg>
-      );
-    case "attested":
-      return (
-        <svg {...shared}>
-          <path d="M13.5 4.5L6.5 12L2.5 8" />
         </svg>
       );
     case "sourced":

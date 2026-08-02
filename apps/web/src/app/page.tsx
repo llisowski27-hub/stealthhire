@@ -84,9 +84,8 @@ export default function Home() {
       >
         <div className="grid gap-6 md:grid-cols-2">
           <p className="text-muted">
-            On StealthHire they become verified talent providers: they
-            contribute pipelines, vouch for what candidates claim, expand
-            coverage, and earn referral revenue.
+            On StealthHire they become talent providers: they contribute
+            pipelines, expand coverage, and earn referral revenue.
           </p>
           <p className="text-muted">
             What they stop doing is standing in the middle of every

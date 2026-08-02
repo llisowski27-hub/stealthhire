@@ -13,9 +13,9 @@ const STEPS: readonly Step[] = [
   },
   {
     number: "02",
-    title: "Most of it verifies itself",
+    title: "It verifies itself",
     description:
-      "Competition results, publications and certifications are matched against official records automatically. Employment gets confirmed by an employer or partner agency — only when a role is actually in play.",
+      "Competition results, publications, certifications and repositories are checked against public records and connected accounts automatically. You don't chase anyone, and nothing waits on a reply.",
   },
   {
     number: "03",

@@ -26,55 +26,40 @@ thing, and gives no honest way to display a claim nobody has confirmed.
 
 ## Decision
 
+**We verify only what verifies itself.** No tier we build requires a third
+party to answer a request, so verification cost does not grow with user
+count and no external party is asked to do unpaid work. Human attestation is
+deliberately deferred — see "Deferred" below.
+
 ### 1. Verification is graded, not binary
 
-Every claim carries one of four tiers:
+Every claim carries one of three tiers:
 
 | Tier | Meaning | Human effort |
 | --- | --- | --- |
 | `registry` | Matched against an official public record — olympiad results (IOI, IMO, ICPC), DOI/ORCID publications, issuer-verifiable certifications (Credly and similar) | None |
 | `sourced` | Pulled from an account the candidate cryptographically proved they own via OAuth (GitHub, ORCID) | None |
-| `attested` | A named third party with standing confirmed it — employer, competition organiser, certification body, or partner agency | One click |
 | `self_declared` | The candidate's claim; nothing has confirmed it yet | None |
 
 Strength ordering (how hard the evidence is to fabricate, *not* how
-important it is to a hiring manager): `registry` > `attested` > `sourced` >
+important it is to a hiring manager): `registry` > `sourced` >
 `self_declared`. `registry` ranks highest because it is independently
 checkable public record. `sourced` proves account ownership and the platform
 data attached to it, but not the candidate's interpretation of that data.
 
-### 2. Automatic first
+### 2. Everything automatic, or honestly unconfirmed
 
-Verification pipelines run automatic tiers before ever involving a person.
-The large majority of the claims this product cares about — competition
-placements, publications, certifications, open-source work — are matchable
-against public sources or OAuth-connected accounts with no human in the loop.
-Human attestation is reserved primarily for employment history, which has no
-public registry.
+Verification pipelines are entirely machine-driven. The claims this product
+cares about most — competition placements, publications, certifications,
+open-source work — are matchable against public sources or OAuth-connected
+accounts with nobody in the loop.
 
-### 3. Human attestation is on demand, not upfront
+Employment history has no public registry and therefore stays
+`self_declared` for now. That is an accepted, visible limitation rather than
+a hidden one: a hiring manager reading the profile can see exactly which
+claims carry evidence and which do not.
 
-Attestation requests are **not** sent when a profile is created. They are
-triggered when a claim becomes decision-relevant — typically when a hiring
-manager engages with the candidate.
-
-This does two things: it collapses request volume from "every claim by every
-user" to "claims on candidates actually in play", and it gives the request
-context ("this person is being considered for a role"), which materially
-improves response rates over a cold request.
-
-### 4. Attestation capacity comes from aligned parties
-
-- **Partner agencies** are the primary human-verification channel. They earn
-  referral revenue, so unlike employers they are economically motivated to
-  validate their candidates. This is the partner layer in `VISION.md`,
-  serving double duty.
-- **Employer domain email round-trip** verifies employment without requiring
-  any employer action: control of an `@company` address is evidence of
-  affiliation. Weaker than a named attestation, and recorded as such.
-- **Named manager confirmation** is a one-click flow, used on demand.
-
-### 5. Unverified claims are displayed, honestly
+### 3. Unverified claims are displayed, honestly
 
 Self-declared claims are shown, clearly labelled, never silently promoted.
 A profile surfaces its composition ("3 registry-verified, 1 self-declared")
@@ -82,7 +67,7 @@ rather than a single badge. Honest labelling is more defensible than
 implying blanket verification, and it makes the verified tiers mean
 something.
 
-### 6. Deterrence over prevention
+### 4. Deterrence over prevention
 
 We do not attempt to make fraudulent claims impossible. We make them
 unattractive:
@@ -93,9 +78,38 @@ unattractive:
 - Hiring managers can report claims; substantiated false claims terminate
   the account.
 
+## Deferred: human attestation
+
+A fourth tier — `attested`, meaning a named third party with standing
+confirmed a claim — is intentionally **not** built yet. It is the only way
+to put evidence behind employment history, so it is likely to arrive
+eventually. It is deferred because it is the only part of the model with
+per-claim human cost, and that cost lands on people who have no reason to
+pay it.
+
+When it is revisited, the reasoning that shaped it should be preserved:
+
+- **Requests must be on demand, never upfront.** Triggering attestation when
+  a hiring manager actually engages with a candidate collapses volume from
+  "every claim by every user" to "claims on candidates in play", and gives
+  the request context ("this person is being considered for a role") that
+  materially lifts response rates over a cold ask.
+- **Capacity must come from aligned parties.** Partner agencies earn
+  referral revenue and are therefore motivated to validate candidates;
+  employers are not. An employer domain-email round-trip is a cheaper middle
+  ground — control of an `@company` address is evidence of affiliation
+  without asking the employer to act — but it is weaker than a named
+  attestation and must be recorded as such.
+
+Adding the tier is additive: the enum, badge, and summary already treat
+tiers as a list, so nothing in the current model needs to be unwound.
+
 ## Consequences
 
-- The UI must render four tiers everywhere a claim appears; a single
+- Employment history carries no evidence tier until human attestation
+  exists, which is the single largest gap in the model and must not be
+  papered over in the UI.
+- The UI must render every tier wherever a claim appears; a single
   "verified" badge is a design regression and should fail review.
 - Verification state is per claim, not per profile.
 - Each automatic tier needs an integration (registry adapters, OAuth
@@ -112,6 +126,9 @@ unattractive:
 
 - Whether `self_declared` claims are visible to employers by default, or
   only to the candidate until they reach a stronger tier.
-- Whether agencies attest at the claim level or vouch for a whole profile.
 - Whether a minimum verification threshold is required before a profile is
   searchable.
+- Which registries to integrate first. Ranked by (public availability ×
+  signal value): GitHub via OAuth, DOI/ORCID, Credly-style certification
+  badges, then competition results (IOI, IMO, ICPC, Codeforces), which are
+  public but inconsistently structured and need per-source adapters.

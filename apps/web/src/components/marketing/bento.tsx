@@ -11,11 +11,11 @@ const SIGNAL_CHIPS = [
   "Patents",
 ] as const;
 
-const ATTESTERS = [
+const AUTO_CHECKS = [
   "Competition results, matched to official records",
-  "Repositories, from accounts you prove you own",
+  "Publications, resolved by DOI",
   "Certifications, checked with the issuer",
-  "Roles, confirmed by employers and partner agencies",
+  "Repositories, from accounts you prove you own",
 ] as const;
 
 function Cell({
@@ -84,25 +84,24 @@ export function Bento() {
       </Cell>
 
       <Cell className="md:col-span-2">
-        <h3 className="text-lg font-medium">
-          Most of it verifies itself
-        </h3>
+        <h3 className="text-lg font-medium">Nobody has to vouch for you</h3>
         <p className="mt-2 max-w-prose text-sm text-muted">
-          Competition results, publications, certifications and open-source
-          work are checkable without asking anyone a favour. Every claim shows
-          exactly what confirmed it — including the ones nothing has yet.
+          We only verify what can be checked against public records or an
+          account you own — no chasing former managers for a favour. Every
+          claim shows exactly what confirmed it, and says so plainly when
+          nothing has.
         </p>
         <ul className="mt-6 grid gap-x-6 gap-y-2 sm:grid-cols-2">
-          {ATTESTERS.map((attester) => (
+          {AUTO_CHECKS.map((check) => (
             <li
-              key={attester}
+              key={check}
               className="flex items-center gap-2.5 text-sm text-muted"
             >
               <span
                 className="size-1.5 shrink-0 rounded-full bg-accent"
                 aria-hidden="true"
               />
-              {attester}
+              {check}
             </li>
           ))}
         </ul>

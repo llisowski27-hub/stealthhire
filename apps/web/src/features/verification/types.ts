@@ -1,15 +1,17 @@
 /**
  * Graded verification model. See docs/adr/0002-verification-model.md.
  *
- * Verification is per claim, never per profile, and never a boolean: a
- * claim matched against a public results table and a claim confirmed by a
- * named former manager are different kinds of evidence and are displayed
- * differently.
+ * Verification is per claim, never per profile, and never a boolean.
+ *
+ * Every tier here confirms itself from public records or accounts the
+ * candidate proves they own — no tier requires a third party to answer a
+ * request. Human attestation is deliberately deferred (ADR 0002,
+ * "Deferred"); until it exists, anything unconfirmed stays self-declared
+ * and is labelled as such.
  */
 
 export const VERIFICATION_TIERS = [
   "registry",
-  "attested",
   "sourced",
   "self_declared",
 ] as const;
@@ -38,15 +40,8 @@ export const VERIFICATION_TIER_META: Record<
     label: "Registry verified",
     description:
       "Matched against an official public record, such as published competition results, a DOI, or an issuer-verifiable certification.",
-    strength: 4,
-    automatic: true,
-  },
-  attested: {
-    label: "Attested",
-    description:
-      "Confirmed by a named third party with standing — an employer, competition organiser, certification body, or partner agency.",
     strength: 3,
-    automatic: false,
+    automatic: true,
   },
   sourced: {
     label: "Source connected",
@@ -93,7 +88,6 @@ export function summarize(
 ): VerificationSummary {
   const byTier: Record<VerificationTier, number> = {
     registry: 0,
-    attested: 0,
     sourced: 0,
     self_declared: 0,
   };

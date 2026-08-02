@@ -20,9 +20,9 @@ const PROOF_ENTRIES: readonly ProofEntry[] = [
     tier: "registry",
   },
   {
-    label: "Senior Engineer · Payments",
-    detail: "4 yrs — scaled ledger to 12k tx/s",
-    tier: "attested",
+    label: "AWS Solutions Architect",
+    detail: "Professional, valid to 2027",
+    tier: "registry",
   },
   {
     label: "distributed-cache",
@@ -30,8 +30,8 @@ const PROOF_ENTRIES: readonly ProofEntry[] = [
     tier: "sourced",
   },
   {
-    label: "Internal platform rewrite",
-    detail: "Cut deploy time by 60%",
+    label: "Senior Engineer · Payments",
+    detail: "4 yrs — scaled ledger to 12k tx/s",
     tier: "self_declared",
   },
 ];
