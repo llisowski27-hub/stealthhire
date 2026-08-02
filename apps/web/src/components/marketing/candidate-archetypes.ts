@@ -8,8 +8,15 @@
  */
 
 export type Credential = {
-  /** Monogram shown in the logo slot. */
+  /** Monogram shown when no logo asset is set. */
   mark: string;
+  /**
+   * Optional brand asset under `public/logos` — see the README there for
+   * how to source one and when it is appropriate to show it.
+   */
+  logoSrc?: string;
+  /** Institution name; used as the logo's accessible label. */
+  name?: string;
   headline: string;
   detail: string;
 };
@@ -26,11 +33,13 @@ export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
   credentials: [
     {
       mark: "JPM",
+      name: "J.P. Morgan",
       headline: "Quantitative Software Developer",
       detail: "J.P. Morgan · 4 yrs · derivatives pricing",
     },
     {
       mark: "OX",
+      name: "University of Oxford",
       headline: "University of Oxford",
       detail: "MSc Computer Science — Distinction",
     },
@@ -41,6 +50,7 @@ export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
     },
     {
       mark: "IOI",
+      name: "International Olympiad in Informatics",
       headline: "International Olympiad in Informatics",
       detail: "Silver medal · 2nd place",
     },
