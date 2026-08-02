@@ -59,33 +59,34 @@ export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
   ],
 };
 
-/** The unconventional path: no credentials, results that are hard to argue with. */
-export const SELF_TAUGHT_ARCHETYPE: CandidateArchetype = {
-  role: "ML systems engineer · remote",
+/**
+ * The non-target path: real deal exposure and hard credentials, from a
+ * university that never appears on a target list. Education sits last
+ * deliberately — it is the first thing a CV screen sorts on and the least
+ * informative thing here.
+ */
+export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
+  role: "Off-cycle M&A analyst · Frankfurt",
   credentials: [
     {
       mark: "◆",
-      headline: "Founding engineer · infrastructure startup",
-      detail: "Two-person team · acquired 2023",
+      headline: "Off-cycle Analyst · M&A boutique",
+      detail: "6 months · two live sell-sides, €140m and €380m EV",
     },
     {
-      mark: "GH",
-      logoSrc: "/logos/github.svg",
-      name: "GitHub",
-      headline: "tensor-compile",
-      detail: "18k stars · 40M downloads a month",
+      mark: "SIF",
+      headline: "Student investment fund · Portfolio Manager",
+      detail: "£1.2m AUM · +14% vs benchmark over two years",
     },
     {
-      mark: "K",
-      logoSrc: "/logos/kaggle.svg",
-      name: "Kaggle",
-      headline: "Kaggle Grandmaster",
-      detail: "Top 30 worldwide · 4 gold medals",
+      mark: "FMWC",
+      headline: "Financial Modeling World Cup",
+      detail: "Top 100 globally · CFA Level I passed first attempt",
     },
     {
-      mark: "—",
-      headline: "No degree",
-      detail: "Left university after first year",
+      mark: "BSc",
+      headline: "BSc Economics — First class",
+      detail: "Non-target university · no spring week offer",
     },
   ],
 };
