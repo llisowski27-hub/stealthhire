@@ -5,7 +5,6 @@ import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
 import { Capabilities } from "@/components/marketing/capabilities";
 import { Comparison } from "@/components/marketing/comparison";
 import { Hero } from "@/components/marketing/hero";
-import { SearchPreview } from "@/components/marketing/search-preview";
 import { SourceLogos } from "@/components/marketing/source-logos";
 
 type SectionProps = {
@@ -65,18 +64,9 @@ export default function Home() {
         <Bento />
       </Section>
 
-      <Section
-        id="comparison"
-        headingId="search-heading"
-        title="Describe the person. Not the keyword."
-        lede="Search on what someone did, not on the words they happened to type."
-      >
-        <SearchPreview className="mx-auto max-w-3xl" />
-      </Section>
-
       <section
         aria-labelledby="unconventional-heading"
-        className="border-b border-edge bg-background-raised"
+        className="border-b border-edge"
       >
         <div className="mx-auto w-full max-w-content px-6 py-20">
           <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
@@ -101,14 +91,14 @@ export default function Home() {
         </div>
       </section>
 
-      <Section headingId="capabilities-heading" title="What the tools miss">
+      <Section headingId="capabilities-heading" title="What the tools miss" raised>
         <Capabilities />
       </Section>
 
       <Section
+        id="comparison"
         headingId="comparison-heading"
         title="The old way, and ours"
-        raised
       >
         <Comparison />
       </Section>
