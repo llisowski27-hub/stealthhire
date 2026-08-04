@@ -2,10 +2,8 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Bento } from "@/components/marketing/bento";
 import { NON_TARGET_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
 import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
-import { Capabilities } from "@/components/marketing/capabilities";
 import { Comparison } from "@/components/marketing/comparison";
 import { Hero } from "@/components/marketing/hero";
-import { SearchPreview } from "@/components/marketing/search-preview";
 import { SourceLogos } from "@/components/marketing/source-logos";
 
 type SectionProps = {
@@ -57,25 +55,8 @@ export default function Home() {
 
       <SourceLogos />
 
-      <Section
-        headingId="value-heading"
-        title="One profile. Built to be searched."
-        raised
-      >
-        <Bento />
-      </Section>
-
-      <Section
-        id="comparison"
-        headingId="search-heading"
-        title="Describe the person. Not the keyword."
-        lede="Search on what someone did, not on the words they happened to type."
-      >
-        <SearchPreview className="mx-auto max-w-3xl" />
-      </Section>
-
       <section
-        aria-labelledby="unconventional-heading"
+        aria-labelledby="evidence-heading"
         className="border-b border-edge bg-background-raised"
       >
         <div className="mx-auto w-full max-w-content px-6 py-20">
@@ -86,26 +67,27 @@ export default function Home() {
             />
             <div className="order-1 lg:order-2">
               <h2
-                id="unconventional-heading"
+                id="evidence-heading"
                 className="text-display max-w-2xl text-3xl font-semibold md:text-4xl"
               >
-                Beyond the target list
+                Evidence over assumptions
               </h2>
               <p className="mt-3 max-w-prose text-lg text-muted">
-                Two live sell-sides, a first-class degree, CFA Level I at the
-                first attempt — set aside because the university is not on a
-                list.
+                Live transaction experience and competition results. Evaluated
+                on what has been accomplished — not on what appears on the CV
+                header.
               </p>
             </div>
           </div>
         </div>
       </section>
 
-      <Section headingId="capabilities-heading" title="What the tools miss">
-        <Capabilities />
+      <Section headingId="value-heading" title="One profile. Built to be searched.">
+        <Bento />
       </Section>
 
       <Section
+        id="comparison"
         headingId="comparison-heading"
         title="The old way, and ours"
         raised

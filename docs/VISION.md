@@ -1,94 +1,82 @@
 # StealthHire — Product Vision
 
-StealthHire is a next-generation talent intelligence platform that connects
-Hiring Managers directly with exceptional professionals through **verified
-performance data** instead of traditional recruitment workflows.
+StealthHire is a talent intelligence platform. Hiring managers search
+candidates by what they have actually done and message them directly. There
+is no recruiter chain in between.
 
-Rather than replacing recruiters, the platform removes unnecessary
-communication layers and enables companies to identify, evaluate, and contact
-top talent with institutional-level precision.
+## 1. The problem
 
-## 1. Core Value Proposition
+Two separate failures, both expensive.
 
-### Direct Hiring
-Hiring Managers connect directly with candidates without relying on multiple
-recruiter handoffs.
+**The chain is slow.** A hiring manager's brief passes through an internal
+recruiter, an agency, and a candidate's contact before a conversation
+happens. Days of relay, three or four people, and 15–30% of first-year
+salary in fees.
 
-### Proof over Resume
-Candidates are evaluated using verified accomplishments, measurable business
-impact, certifications, technical projects, publications, competitions, and
-career outcomes — not keyword-optimized CVs.
+**The screen is blunt.** CV screening sorts on university and keywords.
+Someone who ran two live sell-side processes at a boutique is filtered out
+before a human reads the page, because their university is not on a list.
 
-### Talent Intelligence
-Professional profiles are enriched by combining multiple trusted data sources:
+## 2. Who this is for
 
-- LinkedIn career history
-- GitHub repositories
-- Certifications
-- Publications
-- Competition results
-- Partner recruitment agencies
-- Employer verification
-- Additional public professional data
+The initial market is **finance — investment banking, private equity and
+adjacent roles.** The overlooked candidate is a student or junior with real
+transaction exposure, a student-fund track record, or competition and
+certification results, from outside the target-school list.
 
-The result is a structured professional identity that is significantly richer
-than a traditional résumé.
+This focus determines the language, the profile fields, and the examples on
+every surface. It is a starting market, not a permanent ceiling.
 
-### Agency-Powered Ecosystem
-Recruitment firms contribute verified talent pipelines while employers retain
-a direct relationship with candidates.
+## 3. What we do
 
-## 2. Platform Architecture
+**A profile built from what the candidate already has.** LinkedIn career
+history, a CV parsed into structured fields, linked repositories and
+credentials. The work behind the title, and impact at the top rather than
+buried at the bottom.
 
-```
-          Hiring Manager
-                │
-                │
-    Verified Professional Profile
-                ▲
-    Multi-Source Talent Intelligence
-                ▲
-LinkedIn • GitHub • Agencies • Certifications
-Publications • Projects • Public Professional Data
-```
+**Structured so it can be searched.** The value is not that the profile is
+prettier; it is that the fields a hiring manager screens on exist as data.
 
-### Candidate Layer
-- Comprehensive professional profile
-- Multi-source data aggregation
-- Verified achievements
-- Proof-of-skill portfolio
-- Direct communication with Hiring Managers
+**Direct contact, on the candidate's terms.** The candidate sets their
+conditions — compensation, desk, location. A message only reaches them if it
+meets those conditions. Their employer never sees the signal.
 
-### Employer Layer
-- Search using verified competencies
-- AI-powered ranking based on demonstrated performance
-- Rich candidate intelligence
-- Direct outreach to candidates
-- No communication bottlenecks
+## 4. What we deliberately do not do
 
-### Partner Layer
-Recruitment agencies become verified talent providers by:
+**No verification.** Nothing on a profile is checked, nothing is badged, and
+**no surface may imply that it is** — no "verified" marks, no trust scores,
+no wording suggesting third-party confirmation. See
+[`adr/0002-verification-model.md`](./adr/0002-verification-model.md).
 
-- Contributing high-quality candidates
-- Validating candidate information
-- Expanding talent coverage
-- Receiving referral revenue without owning the hiring process
+**No capability we do not have.** Marketing surfaces show what runs today.
+Deferred features live in [`ROADMAP.md`](./ROADMAP.md) and stay off the site
+until they are built.
 
-## 3. Product-Level Compliance Notes
+## 5. Layers
 
-StealthHire aggregates personal and professional data about individuals.
-Every feature that touches candidate data must be designed with:
+**Candidate** — builds one profile, controls what is exposed and under what
+conditions, talks to hiring managers directly.
 
-- **Lawful basis for processing** (GDPR/CCPA) — especially for data scraped
-  or imported from third-party sources such as LinkedIn and GitHub.
-- **Candidate consent and transparency** — candidates must be able to see,
-  correct, export, and delete their aggregated profile.
-- **Data minimization** — collect only what serves verified evaluation.
-- **Third-party terms of service** — data-source integrations must respect
-  the source platform's API terms; no unauthorized scraping.
-- **Verification integrity** — "verified" claims must be auditable back to
-  their attesting source (employer, agency, certification body).
+**Hiring manager** — searches on demonstrated work, sees the evidence behind
+a match, contacts the candidate without an intermediary.
 
-These constraints are product requirements, not afterthoughts. See
-[`ENGINEERING_GUIDELINES.md`](./ENGINEERING_GUIDELINES.md) and
+A partner/agency layer has been discussed and is not part of the product.
+It is recorded in [`ROADMAP.md`](./ROADMAP.md).
+
+## 6. Compliance is a product requirement
+
+StealthHire aggregates personal data about individuals. Every feature that
+touches candidate data must be designed with:
+
+- **Lawful basis for processing** (GDPR/CCPA), especially for data imported
+  from LinkedIn, GitHub or other third-party sources.
+- **Candidate consent and transparency** — candidates can see, correct,
+  export and delete their profile.
+- **Data minimization** — collect only what serves the search.
+- **Third-party terms of service** — integrations respect the source
+  platform's API terms. No unauthorized scraping.
+- **Honest presentation** — an unverified claim is never displayed as
+  anything other than the candidate's own assertion.
+
+See [`ENGINEERING_GUIDELINES.md`](./ENGINEERING_GUIDELINES.md) and
 [`SECURITY.md`](./SECURITY.md).

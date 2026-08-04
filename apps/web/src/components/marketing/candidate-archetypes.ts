@@ -63,34 +63,47 @@ export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
  * A candidate whose record is strong but whose university does not appear
  * on a bank's target list.
  *
- * The card states the candidate's achievements only. Screening practice is
- * an industry problem, not an attribute of the person, so no entry here
- * labels them as "non-target" — that argument belongs in the surrounding
- * copy. Education sits last because it is the first field a CV screen
- * sorts on and the least informative one here.
+ * Every entry names a real institution. An anonymous "M&A boutique" or
+ * "student investment fund" reads as filler, and an achievement nobody can
+ * place is not evidence of anything.
+ *
+ * What each entry adds beyond a LinkedIn headline is the workstream the
+ * candidate personally owned — the other network shows a title and a date
+ * range, which is not what a desk screens on.
+ *
+ * Deliberately absent: a specific transaction size or status. This profile
+ * is illustrative and belongs to no one, so attaching an invented mandate
+ * to a named advisory firm would assert something false about that firm's
+ * deal record on a commercial page. Ownership of a workstream is the
+ * differentiating detail and carries no such claim.
+ *
+ * Three entries, and no degree among them — the surrounding copy argues
+ * that the CV header is the least informative field, so the card does not
+ * lead with one. Screening practice is an industry problem, not an
+ * attribute of the person, so nothing here labels the candidate as
+ * "non-target".
  */
 export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
   role: "Off-cycle M&A analyst · Frankfurt",
   credentials: [
     {
-      mark: "◆",
-      headline: "Off-cycle Analyst · M&A boutique",
-      detail: "6 months · two live sell-sides, €140m and €380m EV",
+      mark: "AL",
+      name: "Alantra",
+      headline: "Alantra · Off-cycle Analyst, M&A",
+      detail:
+        "Sell-side execution — owned the operating model, vendor due diligence and IM drafting",
     },
     {
-      mark: "SIF",
-      headline: "Student investment fund · Portfolio Manager",
-      detail: "£1.2m AUM · +14% vs benchmark over two years",
+      mark: "CFA",
+      name: "CFA Institute",
+      headline: "CFA Institute",
+      detail: "Level I passed at the first attempt",
     },
     {
       mark: "FMWC",
+      name: "Financial Modeling World Cup",
       headline: "Financial Modeling World Cup",
-      detail: "Top 100 globally · CFA Level I passed first attempt",
-    },
-    {
-      mark: "BSc",
-      headline: "BSc Economics — First class",
-      detail: "Class of 2026 · dissertation on leveraged credit",
+      detail: "Top 100 globally",
     },
   ],
 };
