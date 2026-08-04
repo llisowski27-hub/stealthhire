@@ -121,6 +121,25 @@ contact.
 - An evaluation set of briefs with known-good answers. Without it there
   is no way to tell a ranking change from a ranking regression.
 
+## Candidate-side controls and outreach
+
+**Status:** not built. Depends on the backend.
+
+Four capabilities were described on the landing page and removed, because
+none of them runs. They remain the intended differentiators against a
+recruiter seat on LinkedIn:
+
+- **Private signal.** The candidate sets compensation, desk and location.
+  Their employer never sees it. This is the feature the product's name
+  refers to.
+- **Conditional inbox.** A message only reaches the candidate if it meets
+  every condition they set.
+- **Grounded outreach.** Openers written from the candidate's actual record
+  rather than a template — bound by the same extractive rule as intent
+  search, since an opener that invents a deal is worse than a template.
+- **Multi-source profiles.** Beyond one network: GitHub, competition
+  results, certification registries.
+
 ## Verification
 
 **Status:** deferred, deliberately and indefinitely.

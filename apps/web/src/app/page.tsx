@@ -73,9 +73,9 @@ export default function Home() {
                 Evidence over assumptions
               </h2>
               <p className="mt-3 max-w-prose text-lg text-muted">
-                Live transaction experience, academic distinction and
-                competition results. Evaluated on what has been accomplished —
-                not on what appears on the CV header.
+                Live transaction experience and competition results. Evaluated
+                on what has been accomplished — not on what appears on the CV
+                header.
               </p>
             </div>
           </div>

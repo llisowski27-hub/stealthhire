@@ -100,6 +100,15 @@ rotated immediately and never reused.
    inputs, not a later pass.
 5. **Third-party brand assets** come from the rights holder. Never trace,
    redraw or screenshot a logo — see `apps/web/public/logos/README.md`.
+6. **Illustrative profiles may name a real institution, but never invent
+   its record.** Marketing candidate cards belong to no one. Naming a real
+   employer, university or awarding body alongside a role is acceptable —
+   attaching a specific invented mandate, transaction, size or outcome to a
+   named firm is not, because it asserts something false about that firm on
+   a commercial page. State what the candidate owned, not what the deal was.
+7. **A credential names its institution or does not appear.** An anonymous
+   "boutique" or "student fund" is filler; an achievement nobody can place
+   is not evidence.
 
 ## AI behaviour
 

@@ -140,11 +140,15 @@ The full lifecycle and definition of done are binding and live in
    not appear on a marketing page.
 3. **The design system comes first.** Components consume tokens; they never
    hard-code values.
-4. **No secrets anywhere** — commits, docs, examples, logs. Placeholders
+4. **Illustrative profiles may name a real institution, never invent its
+   record.** Marketing candidate cards belong to no one. A named firm plus a
+   role is fine; a named firm plus an invented mandate is a false claim
+   about that firm. Every credential names its institution or is cut.
+5. **No secrets anywhere** — commits, docs, examples, logs. Placeholders
    only. An exposed secret is rotated immediately.
-5. **Candidate data is personal data.** GDPR/CCPA obligations are product
+6. **Candidate data is personal data.** GDPR/CCPA obligations are product
    requirements, not a later compliance pass.
-6. **Documentation drift is a bug.** Architecture changes update the docs in
+7. **Documentation drift is a bug.** Architecture changes update the docs in
    the same change.
 
 ## Documentation
