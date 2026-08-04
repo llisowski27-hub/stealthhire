@@ -64,7 +64,7 @@ export default function Home() {
       </Section>
 
       <section
-        aria-labelledby="unconventional-heading"
+        aria-labelledby="evidence-heading"
         className="border-b border-edge"
       >
         <div className="mx-auto w-full max-w-content px-6 py-20">
@@ -75,15 +75,15 @@ export default function Home() {
             />
             <div className="order-1 lg:order-2">
               <h2
-                id="unconventional-heading"
+                id="evidence-heading"
                 className="text-display max-w-2xl text-3xl font-semibold md:text-4xl"
               >
-                Beyond the target list
+                Evidence over assumptions
               </h2>
               <p className="mt-3 max-w-prose text-lg text-muted">
-                Two live sell-sides, a first-class degree, CFA Level I at the
-                first attempt — set aside because the university is not on a
-                list.
+                Live transaction experience, academic distinction and
+                competition results. Evaluated on what has been accomplished —
+                not on what appears on the CV header.
               </p>
             </div>
           </div>
