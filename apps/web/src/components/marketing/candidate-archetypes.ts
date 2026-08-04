@@ -63,10 +63,19 @@ export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
  * A candidate whose record is strong but whose university does not appear
  * on a bank's target list.
  *
- * Every entry states something a LinkedIn profile cannot: the side, size
- * and status of a mandate, and what this person personally owned on it.
- * A title and a date range are what the other network shows; they are not
- * what a desk screens on.
+ * Every entry names a real institution. An anonymous "M&A boutique" or
+ * "student investment fund" reads as filler, and an achievement nobody can
+ * place is not evidence of anything.
+ *
+ * What each entry adds beyond a LinkedIn headline is the workstream the
+ * candidate personally owned — the other network shows a title and a date
+ * range, which is not what a desk screens on.
+ *
+ * Deliberately absent: a specific transaction size or status. This profile
+ * is illustrative and belongs to no one, so attaching an invented mandate
+ * to a named advisory firm would assert something false about that firm's
+ * deal record on a commercial page. Ownership of a workstream is the
+ * differentiating detail and carries no such claim.
  *
  * Three entries, and no degree among them — the surrounding copy argues
  * that the CV header is the least informative field, so the card does not
@@ -78,20 +87,23 @@ export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
   role: "Off-cycle M&A analyst · Frankfurt",
   credentials: [
     {
-      mark: "◆",
-      headline: "Off-cycle Analyst · M&A boutique",
+      mark: "AL",
+      name: "Alantra",
+      headline: "Alantra · Off-cycle Analyst, M&A",
       detail:
-        "Sole analyst on a €380m industrials sell-side — built the operating model, ran vendor DD, drafted the IM. Signed.",
+        "Sell-side execution — owned the operating model, vendor due diligence and IM drafting",
     },
     {
-      mark: "SIF",
-      headline: "Student investment fund · Portfolio Manager",
-      detail: "£1.2m AUM · led the credit book · +14% vs benchmark over two years",
+      mark: "CFA",
+      name: "CFA Institute",
+      headline: "CFA Institute",
+      detail: "Level I passed at the first attempt",
     },
     {
       mark: "FMWC",
+      name: "Financial Modeling World Cup",
       headline: "Financial Modeling World Cup",
-      detail: "Top 100 globally · CFA Level I passed at the first attempt",
+      detail: "Top 100 globally",
     },
   ],
 };
