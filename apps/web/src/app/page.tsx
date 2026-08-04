@@ -55,17 +55,9 @@ export default function Home() {
 
       <SourceLogos />
 
-      <Section
-        headingId="value-heading"
-        title="One profile. Built to be searched."
-        raised
-      >
-        <Bento />
-      </Section>
-
       <section
         aria-labelledby="evidence-heading"
-        className="border-b border-edge"
+        className="border-b border-edge bg-background-raised"
       >
         <div className="mx-auto w-full max-w-content px-6 py-20">
           <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
@@ -89,6 +81,10 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <Section headingId="value-heading" title="One profile. Built to be searched.">
+        <Bento />
+      </Section>
 
       <Section
         id="comparison"
