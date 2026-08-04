@@ -63,11 +63,16 @@ export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
  * A candidate whose record is strong but whose university does not appear
  * on a bank's target list.
  *
- * The card states the candidate's achievements only. Screening practice is
- * an industry problem, not an attribute of the person, so no entry here
- * labels them as "non-target" — that argument belongs in the surrounding
- * copy. Education sits last because it is the first field a CV screen
- * sorts on and the least informative one here.
+ * Every entry states something a LinkedIn profile cannot: the side, size
+ * and status of a mandate, and what this person personally owned on it.
+ * A title and a date range are what the other network shows; they are not
+ * what a desk screens on.
+ *
+ * Three entries, and no degree among them — the surrounding copy argues
+ * that the CV header is the least informative field, so the card does not
+ * lead with one. Screening practice is an industry problem, not an
+ * attribute of the person, so nothing here labels the candidate as
+ * "non-target".
  */
 export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
   role: "Off-cycle M&A analyst · Frankfurt",
@@ -75,22 +80,18 @@ export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
     {
       mark: "◆",
       headline: "Off-cycle Analyst · M&A boutique",
-      detail: "6 months · two live sell-sides, €140m and €380m EV",
+      detail:
+        "Sole analyst on a €380m industrials sell-side — built the operating model, ran vendor DD, drafted the IM. Signed.",
     },
     {
       mark: "SIF",
       headline: "Student investment fund · Portfolio Manager",
-      detail: "£1.2m AUM · +14% vs benchmark over two years",
+      detail: "£1.2m AUM · led the credit book · +14% vs benchmark over two years",
     },
     {
       mark: "FMWC",
       headline: "Financial Modeling World Cup",
-      detail: "Top 100 globally · CFA Level I passed first attempt",
-    },
-    {
-      mark: "BSc",
-      headline: "BSc Economics — First class",
-      detail: "Class of 2026 · dissertation on leveraged credit",
+      detail: "Top 100 globally · CFA Level I passed at the first attempt",
     },
   ],
 };

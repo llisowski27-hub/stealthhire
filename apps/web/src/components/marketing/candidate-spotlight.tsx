@@ -61,7 +61,9 @@ export function CandidateSpotlight({
                 <dt className="truncate text-sm font-medium text-foreground">
                   {credential.headline}
                 </dt>
-                <dd className="truncate text-xs text-muted">
+                {/* Clamped rather than truncated: a mandate needs a full
+                    sentence to say what the candidate owned on it. */}
+                <dd className="line-clamp-2 text-xs text-muted">
                   {credential.detail}
                 </dd>
               </div>
