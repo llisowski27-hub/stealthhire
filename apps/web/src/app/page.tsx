@@ -2,7 +2,6 @@ import { ButtonLink } from "@/components/ui/button-link";
 import { Bento } from "@/components/marketing/bento";
 import { NON_TARGET_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
 import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
-import { Capabilities } from "@/components/marketing/capabilities";
 import { Comparison } from "@/components/marketing/comparison";
 import { Hero } from "@/components/marketing/hero";
 import { SourceLogos } from "@/components/marketing/source-logos";
@@ -91,14 +90,11 @@ export default function Home() {
         </div>
       </section>
 
-      <Section headingId="capabilities-heading" title="What the tools miss" raised>
-        <Capabilities />
-      </Section>
-
       <Section
         id="comparison"
         headingId="comparison-heading"
         title="The old way, and ours"
+        raised
       >
         <Comparison />
       </Section>
