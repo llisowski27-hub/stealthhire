@@ -50,8 +50,7 @@ run.
 A hiring manager writes a brief in plain language — "someone who has
 worked a live sell-side process and can build an LBO unassisted,
 regardless of university" — and gets ranked candidates, each with the
-specific piece of evidence that answered the brief and where that
-evidence came from.
+specific piece of evidence that answered the brief.
 
 The point is recall, not phrasing: keyword search returns whoever typed
 the right string. A candidate who ran a disposal but wrote "advised the
@@ -79,6 +78,26 @@ keeps it affordable.
    displayed produces the one-line "why this matched". Runs on the
    displayed page only, so cost scales with results shown rather than
    with corpus size.
+
+### How a result must read
+
+The audience is a desk at a firm that receives thousands of applications.
+Anything that reads like a CV bullet or a generic job board fails on
+contact.
+
+- **Deal-sheet register, not CV register.** A result states side, sector,
+  size, status and what the person personally owned: "Sell-side,
+  industrials, €380m EV, signed — owned the operating model and the DD
+  tracker." Not "built the operating model on a take-private."
+- **No provenance line.** An earlier mockup labelled sources as "referee"
+  and "modelling test". Both imply we contacted a referee or saw a firm's
+  modelling test. We do not, and displaying either would break the
+  no-verification rule at exactly the point where it is most damaging.
+  A result shows the candidate's own structured record and nothing else.
+- **Specific or absent.** A vague evidence line is worse than none — it
+  spends the reader's attention and returns nothing. If the profile does
+  not carry a specific fact answering the brief, the result does not
+  claim one.
 
 ### Constraints that are not negotiable
 
