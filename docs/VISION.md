@@ -27,6 +27,23 @@ certification results, from outside the target-school list.
 This focus determines the language, the profile fields, and the examples on
 every surface. It is a starting market, not a permanent ceiling.
 
+**Why a vertical and not a broad platform.** Liquidity in a search
+marketplace is per-vertical: two hundred candidates spread across ten
+industries is a database nobody can hire from, while two hundred in
+investment banking is a product. The target-school problem is also acutely a
+finance problem — few industries maintain a literal list — and the
+vocabulary is a credibility test. A page that says "sell-side" and
+"off-cycle" signals insider knowledge; a generic one reads as outsiders
+building a recruiting app.
+
+**Marketing surfaces address the candidate, not the employer.** Candidates
+are the supply, and the supply side has to exist before search can be sold
+to anyone. Every call to action on the site is a candidate action, so the
+copy is written in the candidate's voice throughout. The employer's argument
+still appears — it is the reason building a profile pays off — but as
+support, never as a second pitch competing for the same attention. A visitor
+who cannot tell within seconds whether they are hiring or being hired leaves.
+
 ## 3. What we do
 
 **A profile built from what the candidate already has.** LinkedIn career

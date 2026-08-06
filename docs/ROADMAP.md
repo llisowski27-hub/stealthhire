@@ -12,6 +12,37 @@ else waits.
 
 ---
 
+## Frontend quality gaps
+
+**Status:** known, unaddressed. None of these needs a backend.
+
+The code that exists is reviewed carefully; what is missing is anything that
+catches a regression *without* someone paying attention. Three defects
+shipped in the profile form (index keys, stale validation errors, no
+autosave) while lint, tests and the production build all passed, because
+nothing asserted that a person could use the form.
+
+- **End-to-end tests in CI.** The profile flow is verified by driving a real
+  browser by hand. That protects the change being made, not the next one.
+  Highest value of the four.
+- **Visual regression.** Landing-page layout has broken twice — horizontal
+  overflow at 390px, and colliding section backgrounds after a section was
+  removed — both caught only by looking at a screenshot.
+- **Accessibility automation.** Components are built with focus management,
+  ARIA and semantic HTML, but nothing verifies it. Adding axe to the test
+  run makes it structural rather than cultural.
+- **Performance budget.** Bundle size has never been measured and there is
+  no gate in CI.
+
+Smaller, and cheap: `/design` is publicly indexable and should be
+`robots: { index: false }`; the `%s · StealthHire` title template in the root
+layout is unused, so every route is titled "StealthHire".
+
+Related: marketing components have no tests at all. Some product rules are
+mechanically checkable — that no marketing surface renders wording implying
+verification, for instance — and a test would enforce what is currently
+enforced by memory.
+
 ## Backend
 
 **Status:** not started. This is the top priority and blocks everything else.

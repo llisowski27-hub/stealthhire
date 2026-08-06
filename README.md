@@ -15,8 +15,10 @@ university and keywords, so a candidate with two live sell-side processes
 behind them is filtered out before anyone reads the page.
 
 The initial market is **finance**: investment banking, private equity and
-adjacent roles. That focus drives the vocabulary and the profile fields
-across the product.
+adjacent roles. Marketing surfaces address the **candidate**, since every
+call to action on the site is a candidate action. Both choices bind the
+copy, the profile fields and the examples everywhere — the reasoning is in
+[`docs/VISION.md`](docs/VISION.md) §2.
 
 ## Status
 
@@ -26,7 +28,7 @@ across the product.
 | --- | --- |
 | Design system and component library | Built |
 | Landing page | Built |
-| Profile builder (`/profile`) | Built — manual entry, saves to `localStorage` |
+| Profile builder (`/profile`) | Built — manual entry, autosaves to `localStorage` |
 | Database, API, authentication | **Not started** |
 | LinkedIn / CV import | **Not started** — described in the vision, not implemented |
 | Intent search | **Not started** — see the roadmap |
@@ -40,8 +42,10 @@ advertised on the site before it exists.
 Backend → LinkedIn/CV import → intent search. Detail, constraints and the
 reasoning behind each deferral: [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-The backend is the current priority and blocks the other two. It needs an
-ADR before any code is written.
+The backend blocks the other two and needs an ADR before any code. Separately
+and not blocked by it, `docs/ROADMAP.md` lists the frontend quality gaps —
+end-to-end tests, visual regression, accessibility automation and a
+performance budget — which is where regressions currently slip through.
 
 ## Architecture
 
@@ -64,7 +68,11 @@ passing review. See [`docs/DESIGN_LANGUAGE.md`](docs/DESIGN_LANGUAGE.md) and
 | Styling | Tailwind CSS v4, CSS-variable design tokens |
 | Tests | Vitest, Testing Library, jsdom |
 | Lint | ESLint |
-| CI | Lint, tests and a production build on every push and PR |
+| CI | Dependency audit, lint, tests and a production build on every push and PR |
+
+The audit step fails on high and critical advisories only, so a low-severity
+transitive finding cannot block an unrelated change. Fix advisories rather
+than raising the threshold — a check allowed to stay red stops being read.
 
 Exact versions are in `apps/web/package.json` — that file is the source of
 truth, not this table.
