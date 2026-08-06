@@ -7,11 +7,12 @@ import { ErrorState } from "@/components/ui/error-state";
 type ErrorBoundaryProps = {
   error: Error & { digest?: string };
   /**
-   * Re-fetches and re-renders this boundary's children. Named `unstable_retry`
-   * by the framework in this version — see
+   * Re-fetches and re-renders this boundary's children. Stable as `retry`
+   * from Next 16.3.0; it was `unstable_retry` in 16.2.x, so this name is
+   * version-sensitive — see
    * `node_modules/next/dist/docs/01-app/03-api-reference/03-file-conventions/error.md`.
    */
-  unstable_retry: () => void;
+  retry: () => void;
 };
 
 /**
@@ -24,10 +25,7 @@ type ErrorBoundaryProps = {
  * an opaque hash that matches a server log line, which is what someone
  * reporting the problem actually needs to quote.
  */
-export default function ErrorBoundary({
-  error,
-  unstable_retry,
-}: ErrorBoundaryProps) {
+export default function ErrorBoundary({ error, retry }: ErrorBoundaryProps) {
   useEffect(() => {
     // Console until an error reporting service exists. Logs the error object,
     // never the user's draft or any other page state.
@@ -42,7 +40,7 @@ export default function ErrorBoundary({
           description="The page could not be displayed. Trying again often resolves it."
           action={
             <div className="flex flex-col items-center gap-3">
-              <Button onClick={() => unstable_retry()}>Try again</Button>
+              <Button onClick={() => retry()}>Try again</Button>
               {error.digest && (
                 <p className="font-mono text-xs text-muted">
                   Reference: {error.digest}
