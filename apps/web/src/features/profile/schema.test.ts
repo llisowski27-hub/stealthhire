@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import {
-  EMPTY_ACHIEVEMENT,
+  createAchievement,
   EMPTY_PROFILE,
   validateAchievement,
   validateProfile,
@@ -37,12 +37,13 @@ describe("validateProfileUrl", () => {
 
 describe("validateAchievement", () => {
   it("requires a title", () => {
-    expect(validateAchievement(EMPTY_ACHIEVEMENT)?.title).toBeDefined();
+    expect(validateAchievement(createAchievement())?.title).toBeDefined();
   });
 
   it("accepts a complete achievement", () => {
     expect(
       validateAchievement({
+        ...createAchievement(),
         type: "olympiad",
         title: "IMO Silver Medal",
         year: "2019",
@@ -53,6 +54,7 @@ describe("validateAchievement", () => {
 
   it("rejects out-of-range years and non-https links", () => {
     const errors = validateAchievement({
+      ...createAchievement(),
       type: "hackathon",
       title: "Won",
       year: "1900",
@@ -81,6 +83,7 @@ describe("validateProfile", () => {
         githubUrl: "https://github.com/ada",
         achievements: [
           {
+            ...createAchievement(),
             type: "publication",
             title: "Notes on the Analytical Engine",
             year: "1993",
@@ -97,8 +100,8 @@ describe("validateProfile", () => {
       firstName: "Ada",
       lastName: "Lovelace",
       achievements: [
-        { type: "hackathon", title: "Valid entry", year: "", link: "" },
-        EMPTY_ACHIEVEMENT,
+        { ...createAchievement(), title: "Valid entry" },
+        createAchievement(),
       ],
     });
     expect(errors?.achievements?.[0]).toBeUndefined();

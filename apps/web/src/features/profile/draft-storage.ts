@@ -1,3 +1,4 @@
+import { createId } from "@/lib/id";
 import {
   ACHIEVEMENT_TYPES,
   EMPTY_PROFILE,
@@ -22,7 +23,14 @@ function asAchievement(value: unknown): Achievement | undefined {
   const record = value as Record<string, unknown>;
   const type = ACHIEVEMENT_TYPES.find((t) => t === record.type);
   if (!type) return undefined;
+  // A stored id is only a React key, so a missing or malformed one is
+  // replaced rather than treated as corruption — drafts written before ids
+  // existed still restore.
+  const id = typeof record.id === "string" && record.id !== ""
+    ? record.id
+    : createId();
   return {
+    id,
     type,
     title: asString(record.title),
     year: asString(record.year),
