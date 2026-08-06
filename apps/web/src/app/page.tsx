@@ -1,10 +1,9 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Bento } from "@/components/marketing/bento";
-import { NON_TARGET_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
+import { EXPERIENCED_ARCHETYPE } from "@/components/marketing/candidate-archetypes";
 import { CandidateSpotlight } from "@/components/marketing/candidate-spotlight";
 import { Comparison } from "@/components/marketing/comparison";
 import { Hero } from "@/components/marketing/hero";
-import { SourceLogos } from "@/components/marketing/source-logos";
 
 type SectionProps = {
   id?: string;
@@ -53,8 +52,6 @@ export default function Home() {
     <main className="flex-1 w-full">
       <Hero />
 
-      <SourceLogos />
-
       <section
         aria-labelledby="evidence-heading"
         className="border-b border-edge bg-background-raised"
@@ -62,7 +59,7 @@ export default function Home() {
         <div className="mx-auto w-full max-w-content px-6 py-20">
           <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
             <CandidateSpotlight
-              profile={NON_TARGET_ARCHETYPE}
+              profile={EXPERIENCED_ARCHETYPE}
               className="order-2 lg:order-1"
             />
             <div className="order-1 lg:order-2">
@@ -70,12 +67,12 @@ export default function Home() {
                 id="evidence-heading"
                 className="text-display max-w-2xl text-3xl font-semibold md:text-4xl"
               >
-                Evidence over assumptions
+                Your title is not your work
               </h2>
               <p className="mt-3 max-w-prose text-lg text-muted">
-                Live transaction experience and competition results. Evaluated
-                on what has been accomplished — not on what appears on the CV
-                header.
+                &ldquo;Analyst&rdquo; is what a keyword search returns. It does
+                not say which desk, which side of the table, or what you
+                actually ran.
               </p>
             </div>
           </div>
