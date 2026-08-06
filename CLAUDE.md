@@ -109,6 +109,15 @@ rotated immediately and never reused.
 7. **A credential names its institution or does not appear.** An anonymous
    "boutique" or "student fund" is filler; an achievement nobody can place
    is not evidence.
+8. **Marketing copy is written to the candidate, in the candidate's voice.**
+   Every call to action on the site is a candidate action. Employer-voice
+   copy ("what you screen", "cost per hire") next to a candidate button
+   makes a visitor stop to work out which product this is. The employer's
+   argument appears as the reason a profile pays off, never as a second
+   pitch. See [`docs/VISION.md`](docs/VISION.md) §2.
+9. **Examples stay inside the vertical.** Illustrative profiles differ by
+   career stage, not by industry — two industries on one page argue two
+   different products.
 
 ## AI behaviour
 

@@ -8,12 +8,15 @@ import { useToast } from "@/components/ui/toast";
 import { AchievementRow } from "./achievement-row";
 import { loadDraft, saveDraft } from "./draft-storage";
 import {
-  EMPTY_ACHIEVEMENT,
+  createAchievement,
   EMPTY_PROFILE,
   validateProfile,
+  type Achievement,
   type ProfileDraft,
-  type ProfileErrors,
 } from "./schema";
+
+/** How long typing settles before a draft is written to local storage. */
+const AUTOSAVE_DELAY_MS = 800;
 
 type TextFieldName = Exclude<keyof ProfileDraft, "achievements">;
 
@@ -52,7 +55,13 @@ const TEXT_FIELDS: ReadonlyArray<{
 export function ProfileForm() {
   const { toast } = useToast();
   const [draft, setDraft] = useState<ProfileDraft>(EMPTY_PROFILE);
-  const [errors, setErrors] = useState<ProfileErrors | undefined>();
+  const [submitted, setSubmitted] = useState(false);
+  const [edited, setEdited] = useState(false);
+
+  // Derived, not stored: validating during render means a field's error
+  // clears as soon as the user fixes it. Held back until the first submit
+  // so the form does not shout at someone who has not finished typing.
+  const errors = submitted ? validateProfile(draft) : undefined;
 
   // Restore any local draft after mount. localStorage can't be read during
   // SSR, so this must happen post-hydration; the one-time extra render is
@@ -63,14 +72,37 @@ export function ProfileForm() {
     if (stored) setDraft(stored);
   }, []);
 
+  // Autosave, debounced. Gated on `edited` so restoring a draft — or simply
+  // opening the page — never writes over stored data with an empty profile.
+  // Failures stay silent here; the explicit save reports them.
+  useEffect(() => {
+    if (!edited) return;
+    const timer = setTimeout(() => saveDraft(draft), AUTOSAVE_DELAY_MS);
+    return () => clearTimeout(timer);
+  }, [draft, edited]);
+
+  const updateDraft = (change: (current: ProfileDraft) => ProfileDraft) => {
+    setEdited(true);
+    setDraft(change);
+  };
+
   const setField = (name: TextFieldName, value: string) => {
-    setDraft((current) => ({ ...current, [name]: value }));
+    updateDraft((current) => ({ ...current, [name]: value }));
+  };
+
+  const setAchievements = (
+    change: (current: readonly Achievement[]) => Achievement[],
+  ) => {
+    updateDraft((current) => ({
+      ...current,
+      achievements: change(current.achievements),
+    }));
   };
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault();
+    setSubmitted(true);
     const validation = validateProfile(draft);
-    setErrors(validation);
     if (validation) {
       toast({
         title: "Please fix the highlighted fields",
@@ -135,10 +167,7 @@ export function ProfileForm() {
             variant="secondary"
             size="sm"
             onClick={() =>
-              setDraft((current) => ({
-                ...current,
-                achievements: [...current.achievements, EMPTY_ACHIEVEMENT],
-              }))
+              setAchievements((current) => [...current, createAchievement()])
             }
           >
             Add achievement
@@ -155,26 +184,25 @@ export function ProfileForm() {
         ) : (
           <div className="flex flex-col gap-4">
             {draft.achievements.map((achievement, index) => (
+              // Keyed by identity, not position: an index key would re-point
+              // this row's DOM nodes, ids and labels at a different
+              // achievement when one above it is removed.
               <AchievementRow
-                key={index}
+                key={achievement.id}
                 index={index}
                 value={achievement}
                 errors={errors?.achievements?.[index]}
                 onChange={(next) =>
-                  setDraft((current) => ({
-                    ...current,
-                    achievements: current.achievements.map((item, i) =>
-                      i === index ? next : item,
+                  setAchievements((current) =>
+                    current.map((item) =>
+                      item.id === achievement.id ? next : item,
                     ),
-                  }))
+                  )
                 }
                 onRemove={() =>
-                  setDraft((current) => ({
-                    ...current,
-                    achievements: current.achievements.filter(
-                      (_, i) => i !== index,
-                    ),
-                  }))
+                  setAchievements((current) =>
+                    current.filter((item) => item.id !== achievement.id),
+                  )
                 }
               />
             ))}

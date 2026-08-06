@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     template: "%s · StealthHire",
   },
   description:
-    "One candidate profile mapped from LinkedIn, your CV and your repositories — so hiring managers can find the right person and message them directly.",
+    "Talent intelligence for finance. One profile from your CV and LinkedIn, built so hiring managers can find you on the work you have done — and message you directly.",
 };
 
 export default function RootLayout({

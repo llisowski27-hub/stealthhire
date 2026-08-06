@@ -4,6 +4,8 @@
  * is UX, never a security boundary).
  */
 
+import { createId } from "@/lib/id";
+
 export const ACHIEVEMENT_TYPES = [
   "olympiad",
   "hackathon",
@@ -16,6 +18,12 @@ export const ACHIEVEMENT_TYPES = [
 export type AchievementType = (typeof ACHIEVEMENT_TYPES)[number];
 
 export type Achievement = {
+  /**
+   * Stable client-side identity. Exists so React keys and DOM ids survive
+   * reordering and removal — an index would re-point both at a different
+   * row. Not a server identifier.
+   */
+  id: string;
   type: AchievementType;
   title: string;
   year: string;
@@ -42,12 +50,13 @@ export const EMPTY_PROFILE: ProfileDraft = {
   achievements: [],
 };
 
-export const EMPTY_ACHIEVEMENT: Achievement = {
-  type: "hackathon",
-  title: "",
-  year: "",
-  link: "",
-};
+/**
+ * A factory rather than a shared constant: every row needs its own identity,
+ * and a module-level object would be pushed into the list by reference.
+ */
+export function createAchievement(): Achievement {
+  return { id: createId(), type: "hackathon", title: "", year: "", link: "" };
+}
 
 const NAME_MAX = 100;
 const TEXT_MAX = 200;
@@ -62,6 +71,21 @@ export type ProfileErrors = Partial<
 };
 
 /**
+ * Parses a string as an https URL. Returns undefined for anything that is
+ * not parseable or not https — which is what rejects `javascript:` and
+ * `data:` payloads before they can reach an href.
+ */
+function parseHttpsUrl(value: string): URL | undefined {
+  let url: URL;
+  try {
+    url = new URL(value);
+  } catch {
+    return undefined;
+  }
+  return url.protocol === "https:" ? url : undefined;
+}
+
+/**
  * Validates a profile URL: https only, host on the given allowlist
  * (exact or subdomain). Rejects javascript:/data: and lookalike hosts.
  */
@@ -70,14 +94,9 @@ export function validateProfileUrl(
   allowedHosts: readonly string[],
 ): string | undefined {
   if (value === "") return undefined;
-  let url: URL;
-  try {
-    url = new URL(value);
-  } catch {
-    return "Enter a full URL, e.g. https://…";
-  }
-  if (url.protocol !== "https:") {
-    return "URL must start with https://";
+  const url = parseHttpsUrl(value);
+  if (!url) {
+    return "Enter a full https:// URL";
   }
   const host = url.hostname.toLowerCase();
   const allowed = allowedHosts.some(
@@ -127,16 +146,10 @@ export function validateAchievement(
     }
   }
 
-  if (achievement.link !== "") {
-    let url: URL | undefined;
-    try {
-      url = new URL(achievement.link);
-    } catch {
-      url = undefined;
-    }
-    if (!url || url.protocol !== "https:") {
-      errors.link = "Link must be a full https:// URL";
-    }
+  // Any host is allowed here — evidence lives on arbitrary sites — but the
+  // scheme is not negotiable, since this value ends up in an href.
+  if (achievement.link !== "" && !parseHttpsUrl(achievement.link)) {
+    errors.link = "Link must be a full https:// URL";
   }
 
   return Object.keys(errors).length > 0 ? errors : undefined;

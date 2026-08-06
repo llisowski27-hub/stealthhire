@@ -18,7 +18,8 @@ export function SiteFooter() {
         <div className="max-w-xs">
           <p className="font-mono text-sm text-foreground">stealthhire</p>
           <p className="mt-3 text-sm text-muted">
-            One profile from your LinkedIn, CV and repositories — and direct conversations.
+            One profile from your CV and LinkedIn — and conversations with no
+            recruiter in between.
           </p>
         </div>
         <div className="flex gap-16">

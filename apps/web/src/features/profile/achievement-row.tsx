@@ -20,6 +20,7 @@ const TYPE_LABELS: Record<Achievement["type"], string> = {
 };
 
 type AchievementRowProps = {
+  /** Position, used only for the human-readable label. */
   index: number;
   value: Achievement;
   errors?: AchievementErrors;
@@ -35,7 +36,9 @@ export function AchievementRow({
   onChange,
   onRemove,
 }: AchievementRowProps) {
-  const idBase = `achievement-${index}`;
+  // Derived from the achievement's identity rather than its position, so a
+  // label/control association cannot follow a row that has moved.
+  const idBase = `achievement-${value.id}`;
   return (
     <fieldset className="rounded-lg border border-edge bg-surface-1 p-4">
       <legend className="sr-only">Achievement {index + 1}</legend>

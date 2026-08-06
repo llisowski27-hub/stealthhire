@@ -2,9 +2,25 @@
  * Illustrative candidate profiles for marketing surfaces. Identities are
  * never rendered.
  *
+ * Both archetypes are finance, because the product is positioned on a
+ * finance vertical first. They differ by career stage, not by industry —
+ * the page argues one thing, and two profiles from two industries would
+ * argue two.
+ *
  * `mark` is a placeholder monogram, not an institution's logo — see
  * institution-mark.tsx. Swapping in real brand assets requires permission
  * from each rights holder.
+ *
+ * Naming rules, which bind every entry below:
+ *
+ * 1. Every credential names a real institution. An anonymous "boutique" or
+ *    "student fund" is filler, and an achievement nobody can place is not
+ *    evidence.
+ * 2. No entry attaches a specific mandate, size or outcome to a named firm.
+ *    These profiles belong to no one, so an invented transaction would
+ *    assert something false about that firm's record on a commercial page.
+ *    State the workstream the candidate owned — that is both the
+ *    differentiating detail and a claim about the person, not the firm.
  */
 
 export type Credential = {
@@ -27,63 +43,17 @@ export type CandidateArchetype = {
   credentials: readonly Credential[];
 };
 
-/** The credentialed path: every box ticked, in order. */
-export const CREDENTIALED_ARCHETYPE: CandidateArchetype = {
-  role: "Quantitative developer · London",
-  credentials: [
-    {
-      mark: "JPM",
-      name: "J.P. Morgan",
-      headline: "Quantitative Software Developer",
-      detail: "J.P. Morgan · 4 yrs · derivatives pricing",
-    },
-    {
-      mark: "OX",
-      name: "University of Oxford",
-      headline: "University of Oxford",
-      detail: "MSc Computer Science — Distinction",
-    },
-    {
-      mark: "GH",
-      logoSrc: "/logos/github.svg",
-      name: "GitHub",
-      headline: "monte-carlo-engine",
-      detail: "3.1k stars · GPU path simulation",
-    },
-    {
-      mark: "IOI",
-      name: "International Olympiad in Informatics",
-      headline: "International Olympiad in Informatics",
-      detail: "Silver medal · 2nd place",
-    },
-  ],
-};
-
 /**
- * A candidate whose record is strong but whose university does not appear
- * on a bank's target list.
+ * Early career, outside the target-school list. This is the profile the
+ * product exists for, so it leads the page: real transaction exposure that
+ * a CV screen sorted on university would never reach.
  *
- * Every entry names a real institution. An anonymous "M&A boutique" or
- * "student investment fund" reads as filler, and an achievement nobody can
- * place is not evidence of anything.
- *
- * What each entry adds beyond a LinkedIn headline is the workstream the
- * candidate personally owned — the other network shows a title and a date
- * range, which is not what a desk screens on.
- *
- * Deliberately absent: a specific transaction size or status. This profile
- * is illustrative and belongs to no one, so attaching an invented mandate
- * to a named advisory firm would assert something false about that firm's
- * deal record on a commercial page. Ownership of a workstream is the
- * differentiating detail and carries no such claim.
- *
- * Three entries, and no degree among them — the surrounding copy argues
- * that the CV header is the least informative field, so the card does not
- * lead with one. Screening practice is an industry problem, not an
- * attribute of the person, so nothing here labels the candidate as
- * "non-target".
+ * No degree appears. The surrounding copy argues that the CV header is the
+ * least informative field, and leading with one would undercut that in the
+ * same viewport. Screening practice is an industry problem, not an
+ * attribute of the person, so nothing here labels the candidate.
  */
-export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
+export const EARLY_CAREER_ARCHETYPE: CandidateArchetype = {
   role: "Off-cycle M&A analyst · Frankfurt",
   credentials: [
     {
@@ -104,6 +74,37 @@ export const NON_TARGET_ARCHETYPE: CandidateArchetype = {
       name: "Financial Modeling World Cup",
       headline: "Financial Modeling World Cup",
       detail: "Top 100 globally",
+    },
+  ],
+};
+
+/**
+ * Mid career, where the job title undersells the work. The second failure
+ * the product addresses: "Analyst" is what a search returns on, and it says
+ * nothing about which desk, which side of the table, or what this person
+ * actually ran.
+ */
+export const EXPERIENCED_ARCHETYPE: CandidateArchetype = {
+  role: "Restructuring analyst · London",
+  credentials: [
+    {
+      mark: "R&Co",
+      name: "Rothschild & Co",
+      headline: "Rothschild & Co · Analyst, Restructuring",
+      detail:
+        "Debtor-side advisory — liquidity modelling, covenant analysis and lender presentations",
+    },
+    {
+      mark: "ACA",
+      name: "ICAEW",
+      headline: "ICAEW · ACA qualified",
+      detail: "First-time passes across all levels",
+    },
+    {
+      mark: "CFA",
+      name: "CFA Institute",
+      headline: "CFA Institute · Charterholder",
+      detail: "All three levels",
     },
   ],
 };
