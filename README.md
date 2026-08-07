@@ -14,8 +14,9 @@ Hiring goes through a chain — internal recruiter, agency, candidate contact
 university and keywords, so a candidate with two live sell-side processes
 behind them is filtered out before anyone reads the page.
 
-The initial market is **finance**: investment banking, private equity and
-adjacent roles. Marketing surfaces address the **candidate**, since every
+The initial market is **finance**: investment banking, private equity,
+systematic trading and adjacent roles. Illustrative profiles span desks
+within that vertical, never outside it. Marketing surfaces address the **candidate**, since every
 call to action on the site is a candidate action. Both choices bind the
 copy, the profile fields and the examples everywhere — the reasoning is in
 [`docs/VISION.md`](docs/VISION.md) §2.

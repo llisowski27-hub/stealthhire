@@ -1,6 +1,11 @@
 import { ButtonLink } from "@/components/ui/button-link";
-import { EARLY_CAREER_ARCHETYPE } from "./candidate-archetypes";
-import { CandidateSpotlight } from "./candidate-spotlight";
+import {
+  EARLY_CAREER_ARCHETYPE,
+  QUANT_ARCHETYPE,
+} from "./candidate-archetypes";
+import { CandidateSpotlightRotator } from "./candidate-spotlight-rotator";
+
+const HERO_PROFILES = [EARLY_CAREER_ARCHETYPE, QUANT_ARCHETYPE] as const;
 
 /**
  * Landing hero: statement type, one soft light source, product in view.
@@ -17,10 +22,10 @@ import { CandidateSpotlight } from "./candidate-spotlight";
  * argument therefore appears as the reason the profile pays off, in the
  * second sentence, never as a competing pitch.
  *
- * The card shows the early-career profile deliberately. The page argues
- * that strong records get filtered out on pedigree, so the hero has to show
- * someone that happens to; a fully credentialed candidate would be a live
- * counter-argument in the first viewport.
+ * The card cycles between an advisory and a systematic trading profile.
+ * Both are early career, so the rotation varies the desk and nothing else —
+ * a quant reader who lands on an M&A card has to translate before deciding
+ * the product is for them, and most will not bother.
  */
 export function Hero() {
   return (
@@ -61,8 +66,8 @@ export function Hero() {
             </div>
           </div>
 
-          <CandidateSpotlight
-            profile={EARLY_CAREER_ARCHETYPE}
+          <CandidateSpotlightRotator
+            profiles={HERO_PROFILES}
             className="lg:translate-y-2"
           />
         </div>

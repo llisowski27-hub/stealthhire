@@ -133,8 +133,12 @@ rotated immediately and never reused.
    thesis sentence is true of the industry rather than addressed to a
    reader, so it holds both audiences without splitting the page.
 9. **Examples stay inside the vertical.** Illustrative profiles differ by
-   career stage, not by industry — two industries on one page argue two
-   different products.
+   desk and by career stage, never by industry. Advisory and systematic
+   trading hire on the same argument — that the job title is the least
+   informative field on the record — so a second desk widens the audience
+   without splitting the page; it also spares a quant reader having to
+   translate an M&A card before deciding the product is for them. A profile
+   from outside finance argues two different products.
 
 ## AI behaviour
 

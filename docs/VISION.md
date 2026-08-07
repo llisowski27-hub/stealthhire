@@ -19,10 +19,17 @@ before a human reads the page, because their university is not on a list.
 
 ## 2. Who this is for
 
-The initial market is **finance — investment banking, private equity and
-adjacent roles.** The overlooked candidate is a student or junior with real
-transaction exposure, a student-fund track record, or competition and
-certification results, from outside the target-school list.
+The initial market is **finance — investment banking, private equity,
+systematic trading and adjacent roles.** The overlooked candidate is a
+student or junior with real transaction or research exposure, or competition
+and certification results, from outside the target-school list.
+
+Advisory and systematic trading are different desks, not different verticals.
+They hire on the same argument — that the job title is the least informative
+field on a record — and illustrative profiles may span both, in each desk's
+own vocabulary. A quant reader shown only an M&A card has to translate before
+deciding the product is for them, and most will not. Anything outside finance
+is a different vertical and argues a different product.
 
 This focus determines the language, the profile fields, and the examples on
 every surface. It is a starting market, not a permanent ceiling.

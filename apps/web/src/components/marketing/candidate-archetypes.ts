@@ -2,10 +2,12 @@
  * Illustrative candidate profiles for marketing surfaces. Identities are
  * never rendered.
  *
- * Both archetypes are finance, because the product is positioned on a
- * finance vertical first. They differ by career stage, not by industry —
- * the page argues one thing, and two profiles from two industries would
- * argue two.
+ * Every archetype is finance, because the product is positioned on a finance
+ * vertical first. They differ by desk and by career stage, never by industry:
+ * advisory and systematic trading hire on the same argument — that the job
+ * title is the least informative field on the record — so a second desk
+ * widens the audience without making the page argue two products. A profile
+ * from outside finance would.
  *
  * `mark` is a placeholder monogram, not an institution's logo — see
  * institution-mark.tsx. Swapping in real brand assets requires permission
@@ -105,6 +107,47 @@ export const EARLY_CAREER_ARCHETYPE: CandidateArchetype = {
       headline: "Financial Modeling World Cup",
       detail: "Top 100 globally",
       artefacts: ["Timed modelling under exam conditions"],
+    },
+  ],
+};
+
+/**
+ * Early career, systematic trading. Rotates against the advisory profile in
+ * the hero so a quant reader is not asked to translate an M&A card into
+ * their own vocabulary — the desks share the argument but not the register,
+ * and a market-making candidate reading "vendor due diligence" concludes the
+ * product is not for them.
+ *
+ * The artefacts are deliberately research and infrastructure objects rather
+ * than results. A strategy's returns would be a claim about the employer's
+ * book; a calibration or a backtest harness is the candidate's own work.
+ */
+export const QUANT_ARCHETYPE: CandidateArchetype = {
+  role: "Quantitative trading intern · London",
+  credentials: [
+    {
+      mark: "JS",
+      name: "Jane Street",
+      headline: "Jane Street · Quantitative Trading Intern",
+      detail: "Systematic market making · equity options",
+      artefacts: [
+        "Volatility surface calibration",
+        "Order book microstructure",
+        "Python backtest harness",
+      ],
+    },
+    {
+      mark: "IMO",
+      name: "International Mathematical Olympiad",
+      headline: "International Mathematical Olympiad",
+      detail: "Silver medal",
+    },
+    {
+      mark: "ORTG",
+      name: "Optiver Ready Trader Go",
+      headline: "Optiver Ready Trader Go",
+      detail: "Global finals",
+      artefacts: ["Autonomous market-making algorithm"],
     },
   ],
 };
