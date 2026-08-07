@@ -78,9 +78,9 @@ export const EARLY_CAREER_ARCHETYPE: CandidateArchetype = {
   role: "Off-cycle M&A analyst · Frankfurt",
   credentials: [
     {
-      mark: "AL",
-      name: "Alantra",
-      headline: "Alantra · Off-cycle Analyst, M&A",
+      mark: "MS",
+      name: "Morgan Stanley",
+      headline: "Morgan Stanley · Off-cycle Analyst, M&A",
       detail: "Sell-side M&A · industrials",
       artefacts: [
         "Three-statement operating model",
