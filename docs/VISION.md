@@ -44,6 +44,22 @@ still appears — it is the reason building a profile pays off — but as
 support, never as a second pitch competing for the same attention. A visitor
 who cannot tell within seconds whether they are hiring or being hired leaves.
 
+This is a decision about **who acts**, not about who is worth impressing. The
+buyer is the hiring organization, and the page has to survive being read by a
+VP who wants to know why they would stop using LinkedIn. The resolution is
+that headlines argue the market — *titles are searchable, track records are
+not* — rather than either side's benefit. A thesis holds both readers; a
+candidate-benefit headline ("get found for what you have done") reads as a
+consumer product and loses the buyer in the first viewport. Only the calls to
+action are candidate-side, and they stay that way until search exists to sell.
+
+The same standard governs the illustrative profiles. A finance reader judges
+a record on specificity, so a card that says less than a LinkedIn profile
+does is an argument against the product it appears on. Every row has to be
+measurable and has to separate the candidate from the pool they are compared
+against — which rules out a qualification most applicants also hold, however
+real it is.
+
 ## 3. What we do
 
 **A profile built from what the candidate already has.** LinkedIn career

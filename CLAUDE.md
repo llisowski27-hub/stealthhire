@@ -101,20 +101,30 @@ rotated immediately and never reused.
 5. **Third-party brand assets** come from the rights holder. Never trace,
    redraw or screenshot a logo — see `apps/web/public/logos/README.md`.
 6. **Illustrative profiles may name a real institution, but never invent
-   its record.** Marketing candidate cards belong to no one. Naming a real
-   employer, university or awarding body alongside a role is acceptable —
-   attaching a specific invented mandate, transaction, size or outcome to a
-   named firm is not, because it asserts something false about that firm on
-   a commercial page. State what the candidate owned, not what the deal was.
-7. **A credential names its institution or does not appear.** An anonymous
-   "boutique" or "student fund" is filler; an achievement nobody can place
-   is not evidence.
+   its record.** Marketing candidate cards belong to no one. The line runs
+   between describing a desk and describing a deal: side, sector and the
+   workstream the candidate owned are role descriptors and are allowed;
+   counterparty, enterprise value, status and outcome are a specific
+   transaction and are not, because attaching one to a named firm asserts
+   something false about that firm on a commercial page.
+7. **A credential names its institution and is measurable, or it does not
+   appear.** An anonymous "boutique" or "student fund" is filler. So is a
+   qualification most of the applicant pool also holds — a row that does not
+   separate this candidate from the people they are compared against has
+   failed at the only job it has.
 8. **Marketing copy is written to the candidate, in the candidate's voice.**
    Every call to action on the site is a candidate action. Employer-voice
    copy ("what you screen", "cost per hire") next to a candidate button
    makes a visitor stop to work out which product this is. The employer's
    argument appears as the reason a profile pays off, never as a second
    pitch. See [`docs/VISION.md`](docs/VISION.md) §2.
+   Headlines are the exception, and state the market's thesis rather than
+   either side's benefit. The first question every visitor asks is why this
+   exists when LinkedIn already does; a benefit line answers a different
+   question, and a candidate-benefit line ("get found") reads as a consumer
+   product to the desks whose interest makes the profile worth building. A
+   thesis sentence is true of the industry rather than addressed to a
+   reader, so it holds both audiences without splitting the page.
 9. **Examples stay inside the vertical.** Illustrative profiles differ by
    career stage, not by industry — two industries on one page argue two
    different products.

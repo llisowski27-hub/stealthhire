@@ -149,9 +149,11 @@ The full lifecycle and definition of done are binding and live in
 3. **The design system comes first.** Components consume tokens; they never
    hard-code values.
 4. **Illustrative profiles may name a real institution, never invent its
-   record.** Marketing candidate cards belong to no one. A named firm plus a
-   role is fine; a named firm plus an invented mandate is a false claim
-   about that firm. Every credential names its institution or is cut.
+   record.** Marketing candidate cards belong to no one. Side, sector and
+   the workstream owned describe a desk and are fine; counterparty, size,
+   status and outcome describe a deal and are a false claim about the named
+   firm. Every credential names its institution and is measurable, or it is
+   cut — a qualification the whole applicant pool holds is noise.
 5. **No secrets anywhere** — commits, docs, examples, logs. Placeholders
    only. An exposed secret is rotated immediately.
 6. **Candidate data is personal data.** GDPR/CCPA obligations are product

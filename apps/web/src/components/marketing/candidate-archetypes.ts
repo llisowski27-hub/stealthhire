@@ -19,8 +19,14 @@
  * 2. No entry attaches a specific mandate, size or outcome to a named firm.
  *    These profiles belong to no one, so an invented transaction would
  *    assert something false about that firm's record on a commercial page.
- *    State the workstream the candidate owned — that is both the
- *    differentiating detail and a claim about the person, not the firm.
+ *    The line runs between describing a desk and describing a deal: side,
+ *    sector and the workstream owned are role descriptors and are allowed;
+ *    counterparty, enterprise value, status and outcome are a specific
+ *    transaction and are not.
+ * 3. A credential earns its row by being measurable. A qualification most
+ *    of the applicant pool also holds is noise — it fills the card without
+ *    separating the candidate from the people they are being compared
+ *    against, which is the only job these rows have.
  */
 
 export type Credential = {
@@ -61,13 +67,13 @@ export const EARLY_CAREER_ARCHETYPE: CandidateArchetype = {
       name: "Alantra",
       headline: "Alantra · Off-cycle Analyst, M&A",
       detail:
-        "Sell-side execution — owned the operating model, vendor due diligence and IM drafting",
+        "Sell-side industrials — owned the operating model, the vendor due diligence tracker and the IM draft",
     },
     {
       mark: "CFA",
       name: "CFA Institute",
-      headline: "CFA Institute",
-      detail: "Level I passed at the first attempt",
+      headline: "CFA Institute Research Challenge",
+      detail: "National final",
     },
     {
       mark: "FMWC",
@@ -104,7 +110,7 @@ export const EXPERIENCED_ARCHETYPE: CandidateArchetype = {
       mark: "CFA",
       name: "CFA Institute",
       headline: "CFA Institute · Charterholder",
-      detail: "All three levels",
+      detail: "Passed all three levels at the first attempt",
     },
   ],
 };

@@ -5,10 +5,17 @@ import { CandidateSpotlight } from "./candidate-spotlight";
 /**
  * Landing hero: statement type, one soft light source, product in view.
  *
- * Addressed to the candidate, in the candidate's voice, because that is who
- * the page's only action is for. The employer's side of the argument is
- * made later, as the reason building a profile is worth it — not as a
- * second pitch competing with this one.
+ * The headline states the market thesis rather than the user benefit, because
+ * the first question either side of the marketplace asks is why this exists
+ * when LinkedIn already does. "Titles are searchable, track records are not"
+ * answers that in one line and reads the same to a hiring desk and to a
+ * candidate — the sentence is about the industry, not about the reader.
+ *
+ * The action stays candidate-side: supply has to exist before search can be
+ * sold, and no search product is built, so a hero addressed to a hiring desk
+ * would promise a capability the page cannot then offer. The employer's
+ * argument therefore appears as the reason the profile pays off, in the
+ * second sentence, never as a competing pitch.
  *
  * The card shows the early-career profile deliberately. The page argues
  * that strong records get filtered out on pedigree, so the hero has to show
@@ -32,15 +39,16 @@ export function Hero() {
               talent intelligence for finance
             </span>
 
-            <h1 className="text-display mt-8 text-4xl font-semibold sm:text-5xl md:text-6xl 3xl:text-7xl">
-              Get found for
+            <h1 className="text-display mt-8 text-4xl font-semibold sm:text-5xl 3xl:text-6xl">
+              Titles are searchable.
               <br />
-              what you have done.
+              Track records are not.
             </h1>
 
             <p className="mt-8 max-w-prose text-lg text-muted">
-              One profile from your CV and LinkedIn, built so hiring managers
-              can find you on the work — and message you directly.
+              A hiring desk screens on the CV header because it is the only
+              structured field. StealthHire structures the work itself —
+              desk, side, and what you ran — so that is what gets searched.
             </p>
 
             <div className="mt-10 flex flex-wrap gap-3">
