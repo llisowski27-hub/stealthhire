@@ -171,6 +171,38 @@ recruiter seat on LinkedIn:
 - **Multi-source profiles.** Beyond one network: GitHub, competition
   results, certification registries.
 
+## Work samples and standardised assessment cases
+
+**Status:** not built. Depends on the backend.
+
+The profile carries what a candidate did at an employer, and that is the one
+part of the record we can never make more specific — naming a real firm
+alongside a specific mandate asserts something false about that firm, so the
+detail stops at the artefact ("13-week cash flow model") and cannot reach the
+transaction.
+
+A standardised case library removes that ceiling. The candidate completes a
+platform case — public-company DCF, LBO of a listed business, merger model,
+equity research initiation, factor backtest, options pricing, market-making
+simulation — and the output is theirs to publish in full, with no employer
+implicated and nothing withheld. It resembles the work done inside the firms
+a candidate is applying to without claiming it came from one, and it is the
+only route to deal-level specificity that does not require inventing a deal.
+
+Constraints:
+
+- **Nothing produced here is verified.** A case output is the candidate's own
+  work under stated conditions; it is not a score we stand behind, and no
+  surface may present it as one. Wording like "verified capability" or
+  "verified assessment" is banned outright — see
+  [`adr/0002-verification-model.md`](./adr/0002-verification-model.md).
+  Describe the conditions instead: what the case was, and whether it was
+  timed.
+- **Not advertised until it runs.** No marketing surface may show an
+  assessment case, in any form, before the case library exists.
+- Case content, anti-plagiarism and re-use across candidates are unsolved and
+  are the reason this is not a small feature.
+
 ## Verification
 
 **Status:** deferred, deliberately and indefinitely.

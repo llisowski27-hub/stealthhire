@@ -107,6 +107,13 @@ rotated immediately and never reused.
    counterparty, enterprise value, status and outcome are a specific
    transaction and are not, because attaching one to a named firm asserts
    something false about that firm on a commercial page.
+   Work is named in the artefact register, never in verbs. "Owned the
+   operating model" is a claim about a person on a deal and reads like every
+   other CV; "Three-statement operating model" is a thing that was built.
+   The artefact belongs to the candidate, so naming it precisely says
+   nothing about the employer's mandate — which is what makes this rule
+   satisfiable at the level of detail a finance reader demands. Banned
+   verbs: owned, assisted, supported, involved in.
 7. **A credential names its institution and is measurable, or it does not
    appear.** An anonymous "boutique" or "student fund" is filler. So is a
    qualification most of the applicant pool also holds — a row that does not
