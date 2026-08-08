@@ -19,10 +19,17 @@ before a human reads the page, because their university is not on a list.
 
 ## 2. Who this is for
 
-The initial market is **finance — investment banking, private equity and
-adjacent roles.** The overlooked candidate is a student or junior with real
-transaction exposure, a student-fund track record, or competition and
-certification results, from outside the target-school list.
+The initial market is **finance — investment banking, private equity,
+systematic trading and adjacent roles.** The overlooked candidate is a
+student or junior with real transaction or research exposure, or competition
+and certification results, from outside the target-school list.
+
+Advisory and systematic trading are different desks, not different verticals.
+They hire on the same argument — that the job title is the least informative
+field on a record — and illustrative profiles may span both, in each desk's
+own vocabulary. A quant reader shown only an M&A card has to translate before
+deciding the product is for them, and most will not. Anything outside finance
+is a different vertical and argues a different product.
 
 This focus determines the language, the profile fields, and the examples on
 every surface. It is a starting market, not a permanent ceiling.
@@ -43,6 +50,22 @@ copy is written in the candidate's voice throughout. The employer's argument
 still appears — it is the reason building a profile pays off — but as
 support, never as a second pitch competing for the same attention. A visitor
 who cannot tell within seconds whether they are hiring or being hired leaves.
+
+This is a decision about **who acts**, not about who is worth impressing. The
+buyer is the hiring organization, and the page has to survive being read by a
+VP who wants to know why they would stop using LinkedIn. The resolution is
+that headlines argue the market — *titles are searchable, track records are
+not* — rather than either side's benefit. A thesis holds both readers; a
+candidate-benefit headline ("get found for what you have done") reads as a
+consumer product and loses the buyer in the first viewport. Only the calls to
+action are candidate-side, and they stay that way until search exists to sell.
+
+The same standard governs the illustrative profiles. A finance reader judges
+a record on specificity, so a card that says less than a LinkedIn profile
+does is an argument against the product it appears on. Every row has to be
+measurable and has to separate the candidate from the pool they are compared
+against — which rules out a qualification most applicants also hold, however
+real it is.
 
 ## 3. What we do
 

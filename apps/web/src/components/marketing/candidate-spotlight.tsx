@@ -50,7 +50,7 @@ export function CandidateSpotlight({
           {profile.credentials.map((credential) => (
             <div
               key={credential.headline}
-              className="flex items-center gap-3 rounded-lg border border-edge bg-surface-2/60 px-3 py-2.5"
+              className="flex items-start gap-3 rounded-lg border border-edge bg-surface-2/60 px-3 py-2.5"
             >
               <InstitutionMark
                 mark={credential.mark}
@@ -61,15 +61,30 @@ export function CandidateSpotlight({
                 <dt className="truncate text-sm font-medium text-foreground">
                   {credential.headline}
                 </dt>
-                {/* Clamped rather than truncated: a mandate needs a full
-                    sentence to say what the candidate owned on it. */}
-                <dd className="line-clamp-2 text-xs text-muted">
+                <dd className="truncate text-xs text-muted">
                   {credential.detail}
                 </dd>
+                {credential.artefacts && (
+                  // Mono, because these are records rather than prose, and a
+                  // finance reader is used to reading an instrument line that
+                  // way. Three lines, which is what a three-artefact row needs
+                  // at 390px — a tighter clamp silently drops the last one.
+                  <dd className="mt-1.5 line-clamp-3 font-mono text-[0.6875rem] leading-relaxed text-muted/75">
+                    {credential.artefacts.join(" · ")}
+                  </dd>
+                )}
               </div>
             </div>
           ))}
         </dl>
+
+        {/* Provenance is stated rather than left to inference. No claim on a
+            profile is checked by anyone, so the card says whose account this
+            is — which is both the honest label and the one an institutional
+            reader expects to find on a data surface. */}
+        <p className="font-mono text-[0.6875rem] text-muted/75">
+          candidate-declared record
+        </p>
 
         <div className="flex items-center justify-between border-t border-edge pt-4">
           <span className="font-mono text-xs text-muted">
