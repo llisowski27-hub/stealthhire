@@ -40,13 +40,17 @@ advertised on the site before it exists.
 
 ## Roadmap
 
-Backend → LinkedIn/CV import → intent search. Detail, constraints and the
-reasoning behind each deferral: [`docs/ROADMAP.md`](docs/ROADMAP.md).
+Three stages, smallest first — full detail, constraints and the reasoning
+behind each deferral in [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-The backend blocks the other two and needs an ADR before any code. Separately
-and not blocked by it, `docs/ROADMAP.md` lists the frontend quality gaps —
-end-to-end tests, visual regression, accessibility automation and a
-performance budget — which is where regressions currently slip through.
+1. **Finish the public site.** Social preview, `robots.txt`, sitemap, a real
+   404, and taking `/design` out of the footer and the search index. No
+   backend and no outstanding decisions. This is the work to pick up next.
+2. **Stop it regressing.** End-to-end tests, visual regression, accessibility
+   automation, a performance budget. Also needs no backend, and is where
+   regressions currently slip through.
+3. **Build the product.** Backend → LinkedIn/CV import → intent search. The
+   backend blocks the other two and needs an ADR before any code.
 
 ## Architecture
 
