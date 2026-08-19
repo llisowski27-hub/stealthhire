@@ -1,7 +1,24 @@
 import { ButtonLink } from "@/components/ui/button-link";
 import { Bento } from "@/components/marketing/bento";
+import {
+  EARLY_CAREER_ARCHETYPE,
+  EXPERIENCED_ARCHETYPE,
+  QUANT_ARCHETYPE,
+} from "@/components/marketing/candidate-archetypes";
+import { CandidateSpotlightRotator } from "@/components/marketing/candidate-spotlight-rotator";
 import { Comparison } from "@/components/marketing/comparison";
 import { Hero } from "@/components/marketing/hero";
+
+/**
+ * Three desks, two career stages. The hero shows what a desk searches on;
+ * this section shows the record underneath it, and rotating it proves the
+ * structure holds across desks rather than fitting one flattering example.
+ */
+const EVIDENCE_PROFILES = [
+  EARLY_CAREER_ARCHETYPE,
+  QUANT_ARCHETYPE,
+  EXPERIENCED_ARCHETYPE,
+] as const;
 
 type SectionProps = {
   id?: string;
@@ -54,17 +71,26 @@ export default function Home() {
         aria-labelledby="evidence-heading"
         className="border-b border-edge bg-background-raised"
       >
-        <div className="mx-auto w-full max-w-content px-6 py-24">
-          <h2
-            id="evidence-heading"
-            className="text-display max-w-3xl text-3xl font-semibold md:text-4xl"
-          >
-            Your title is not your work
-          </h2>
-          <p className="mt-4 max-w-prose text-lg text-muted">
-            &ldquo;Analyst&rdquo; is what a keyword search returns. It does not
-            say which desk, which side of the table, or what you actually ran.
-          </p>
+        <div className="mx-auto w-full max-w-content px-6 py-20">
+          <div className="grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr]">
+            <CandidateSpotlightRotator
+              profiles={EVIDENCE_PROFILES}
+              className="order-2 lg:order-1"
+            />
+            <div className="order-1 lg:order-2">
+              <h2
+                id="evidence-heading"
+                className="text-display max-w-2xl text-3xl font-semibold md:text-4xl"
+              >
+                Your title is not your work
+              </h2>
+              <p className="mt-3 max-w-prose text-lg text-muted">
+                &ldquo;Analyst&rdquo; is what a keyword search returns. It does
+                not say which desk, which side of the table, or what you
+                actually ran.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

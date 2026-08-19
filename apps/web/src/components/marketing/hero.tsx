@@ -1,22 +1,5 @@
 import { ButtonLink } from "@/components/ui/button-link";
-import {
-  EARLY_CAREER_ARCHETYPE,
-  EXPERIENCED_ARCHETYPE,
-  QUANT_ARCHETYPE,
-} from "./candidate-archetypes";
-import { CandidateSpotlightRotator } from "./candidate-spotlight-rotator";
-
-/**
- * Three desks and two career stages. One card shows a hiring reader what a
- * record looks like; three show that the structure holds across desks, which
- * is the claim that matters to someone deciding whether this is worth
- * searching.
- */
-const HERO_PROFILES = [
-  EARLY_CAREER_ARCHETYPE,
-  QUANT_ARCHETYPE,
-  EXPERIENCED_ARCHETYPE,
-] as const;
+import { CandidateSearch } from "./candidate-search";
 
 /**
  * Landing hero: statement type, one soft light source, product in view.
@@ -36,13 +19,12 @@ const HERO_PROFILES = [
  * argument therefore appears as the reason the profile pays off, in the
  * second sentence, never as a competing pitch.
  *
- * The card beside it is the headline's evidence: it shows the record broken
- * into named fields — experience, workstream, credentials — so a hiring
- * reader can see that the detail they screen on exists as data rather than
- * as prose. It is a profile and is labelled as one. It is deliberately not
- * dressed as a search result: no query, no result count, no relevance line.
- * Search is not built, and a mocked query on a marketing surface would be
- * the same mistake the removed intent-search section already made.
+ * Beside it is the hiring-desk view: the filters a desk would screen on, at
+ * the granularity a desk actually hires at. This is the panel that has to do
+ * the persuading, because "investment banking" returns everyone and a seat is
+ * always narrower than that — naming the team, the side of the table and the
+ * model built is what tells a reader the product was built by people who have
+ * sat on a desk.
  */
 export function Hero() {
   return (
@@ -86,10 +68,7 @@ export function Hero() {
             </div>
           </div>
 
-          <CandidateSpotlightRotator
-            profiles={HERO_PROFILES}
-            className="lg:translate-y-2"
-          />
+          <CandidateSearch className="lg:translate-y-2" />
         </div>
       </div>
     </section>
