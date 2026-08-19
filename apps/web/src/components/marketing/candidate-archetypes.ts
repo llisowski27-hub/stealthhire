@@ -3,15 +3,14 @@
  * never rendered.
  *
  * Every archetype is finance, because the product is positioned on a finance
- * vertical first. They differ by desk and by career stage, never by industry:
- * advisory and systematic trading hire on the same argument — that the job
- * title is the least informative field on the record — so a second desk
- * widens the audience without making the page argue two products. A profile
- * from outside finance would.
+ * vertical first, and never leaves that vertical. Desks other than advisory
+ * are carried by the search panel's facets rather than by further archetypes:
+ * the page shows one record, and a second would repeat the point rather than
+ * extend it.
  *
- * `mark` is a placeholder monogram, not an institution's logo — see
- * institution-mark.tsx. Swapping in real brand assets requires permission
- * from each rights holder.
+ * `mark` is a placeholder monogram, not an institution's logo. Swapping in
+ * real brand assets requires permission from each rights holder, and no
+ * surface renders them today.
  *
  * Naming rules, which bind every entry below:
  *
@@ -123,84 +122,3 @@ export const EARLY_CAREER_ARCHETYPE: CandidateArchetype = {
   ],
 };
 
-/**
- * Early career, systematic trading. Rotates against the advisory profile in
- * the hero so a quant reader is not asked to translate an M&A card into
- * their own vocabulary — the desks share the argument but not the register,
- * and a market-making candidate reading "vendor due diligence" concludes the
- * product is not for them.
- *
- * The artefacts are deliberately research and infrastructure objects rather
- * than results. A strategy's returns would be a claim about the employer's
- * book; a calibration or a backtest harness is the candidate's own work.
- */
-export const QUANT_ARCHETYPE: CandidateArchetype = {
-  role: "Quantitative trading intern · London",
-  credentials: [
-    {
-      kind: "experience",
-      mark: "JS",
-      name: "Jane Street",
-      headline: "Jane Street · Quantitative Trading Intern",
-      detail: "Systematic market making · equity options",
-      artefacts: [
-        "Volatility surface calibration",
-        "Order book microstructure",
-        "Python backtest harness",
-      ],
-    },
-    {
-      kind: "credential",
-      mark: "IMO",
-      name: "International Mathematical Olympiad",
-      headline: "International Mathematical Olympiad",
-      detail: "Silver medal",
-    },
-    {
-      kind: "credential",
-      mark: "ORTG",
-      name: "Optiver Ready Trader Go",
-      headline: "Optiver Ready Trader Go",
-      detail: "Global finals",
-      artefacts: ["Autonomous market-making algorithm"],
-    },
-  ],
-};
-
-/**
- * Mid career, where the job title undersells the work. The second failure
- * the product addresses: "Analyst" is what a search returns on, and it says
- * nothing about which desk, which side of the table, or what this person
- * actually ran.
- */
-export const EXPERIENCED_ARCHETYPE: CandidateArchetype = {
-  role: "Restructuring analyst · London",
-  credentials: [
-    {
-      kind: "experience",
-      mark: "R&Co",
-      name: "Rothschild & Co",
-      headline: "Rothschild & Co · Analyst, Restructuring",
-      detail: "Debtor-side advisory",
-      artefacts: [
-        "13-week cash flow model",
-        "Covenant headroom analysis",
-        "Lender presentation materials",
-      ],
-    },
-    {
-      kind: "credential",
-      mark: "ACA",
-      name: "ICAEW",
-      headline: "ICAEW · ACA qualified",
-      detail: "First-time passes, all levels",
-    },
-    {
-      kind: "credential",
-      mark: "CFA",
-      name: "CFA Institute",
-      headline: "CFA Institute · Charterholder",
-      detail: "All three levels at the first attempt",
-    },
-  ],
-};

@@ -17,7 +17,10 @@ type Facet = {
  * what tells a reader this was built by people who have sat on a desk.
  */
 const FACETS: readonly Facet[] = [
-  { label: "Desk", options: ["M&A", "Restructuring", "Leveraged finance", "ECM"] },
+  {
+    label: "Desk",
+    options: ["M&A", "Restructuring", "Leveraged finance", "Systematic trading"],
+  },
   { label: "Side", options: ["Sell-side", "Buy-side"] },
   { label: "Sector", options: ["Industrials", "TMT", "Healthcare", "FIG"] },
   {
