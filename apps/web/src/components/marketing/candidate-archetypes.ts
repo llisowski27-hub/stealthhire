@@ -38,7 +38,16 @@
  *    supported, involved in.
  */
 
+/**
+ * Which field group a row belongs to. The split is the point of the card: a
+ * hiring reader has to see named groups to read the profile as a record with
+ * fields rather than as a list, and a record with fields is the thing that
+ * can later be searched on.
+ */
+export type CredentialKind = "experience" | "credential";
+
 export type Credential = {
+  kind: CredentialKind;
   /** Monogram shown when no logo asset is set. */
   mark: string;
   /**
@@ -80,6 +89,7 @@ export const EARLY_CAREER_ARCHETYPE: CandidateArchetype = {
   role: "Off-cycle M&A analyst · Frankfurt",
   credentials: [
     {
+      kind: "experience",
       mark: "MS",
       name: "Morgan Stanley",
       headline: "Morgan Stanley · Off-cycle Analyst, M&A",
@@ -91,6 +101,7 @@ export const EARLY_CAREER_ARCHETYPE: CandidateArchetype = {
       ],
     },
     {
+      kind: "credential",
       mark: "CFA",
       name: "CFA Institute",
       headline: "CFA Institute Research Challenge",
@@ -102,6 +113,7 @@ export const EARLY_CAREER_ARCHETYPE: CandidateArchetype = {
       ],
     },
     {
+      kind: "credential",
       mark: "FMWC",
       name: "Financial Modeling World Cup",
       headline: "Financial Modeling World Cup",
@@ -126,6 +138,7 @@ export const QUANT_ARCHETYPE: CandidateArchetype = {
   role: "Quantitative trading intern · London",
   credentials: [
     {
+      kind: "experience",
       mark: "JS",
       name: "Jane Street",
       headline: "Jane Street · Quantitative Trading Intern",
@@ -137,12 +150,14 @@ export const QUANT_ARCHETYPE: CandidateArchetype = {
       ],
     },
     {
+      kind: "credential",
       mark: "IMO",
       name: "International Mathematical Olympiad",
       headline: "International Mathematical Olympiad",
       detail: "Silver medal",
     },
     {
+      kind: "credential",
       mark: "ORTG",
       name: "Optiver Ready Trader Go",
       headline: "Optiver Ready Trader Go",
@@ -162,6 +177,7 @@ export const EXPERIENCED_ARCHETYPE: CandidateArchetype = {
   role: "Restructuring analyst · London",
   credentials: [
     {
+      kind: "experience",
       mark: "R&Co",
       name: "Rothschild & Co",
       headline: "Rothschild & Co · Analyst, Restructuring",
@@ -173,12 +189,14 @@ export const EXPERIENCED_ARCHETYPE: CandidateArchetype = {
       ],
     },
     {
+      kind: "credential",
       mark: "ACA",
       name: "ICAEW",
       headline: "ICAEW · ACA qualified",
       detail: "First-time passes, all levels",
     },
     {
+      kind: "credential",
       mark: "CFA",
       name: "CFA Institute",
       headline: "CFA Institute · Charterholder",
