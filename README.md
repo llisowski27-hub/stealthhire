@@ -43,9 +43,11 @@ advertised on the site before it exists.
 Three stages, smallest first — full detail, constraints and the reasoning
 behind each deferral in [`docs/ROADMAP.md`](docs/ROADMAP.md).
 
-1. **Finish the public site.** Social preview, `robots.txt`, sitemap, a real
-   404, and taking `/design` out of the footer and the search index. No
-   backend and no outstanding decisions. This is the work to pick up next.
+1. **Finish the public site.** Deployment first — nothing is hosted, so the
+   page exists only on a developer's machine — then a social preview,
+   `robots.txt`, sitemap, a real 404, and taking `/design` out of the footer
+   and the search index. No backend and no outstanding decisions. This is the
+   work to pick up next.
 2. **Stop it regressing.** End-to-end tests, visual regression, accessibility
    automation, a performance budget. Also needs no backend, and is where
    regressions currently slip through.
@@ -68,6 +70,7 @@ passing review. See [`docs/DESIGN_LANGUAGE.md`](docs/DESIGN_LANGUAGE.md) and
 
 | Layer | Choice |
 | --- | --- |
+| Hosting | **None.** Not deployed — see [`docs/ROADMAP.md`](docs/ROADMAP.md) stage 1 |
 | Framework | Next.js (App Router), React |
 | Language | TypeScript, `strict` plus `noUncheckedIndexedAccess` |
 | Styling | Tailwind CSS v4, CSS-variable design tokens |

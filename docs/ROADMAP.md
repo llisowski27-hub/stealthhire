@@ -29,6 +29,36 @@ the work to pick up next.
 The landing page is built and the design system behind it is built. What is
 missing is everything around a page that makes it a site.
 
+### The site is not deployed anywhere
+
+There is no hosting. CI lints, tests and builds, and then throws the build
+away — no step publishes it. The page can only be seen by running it locally,
+so it cannot be shown to a candidate, a hiring desk or an investor, and no
+change has ever been verified anywhere except a developer's machine.
+
+This is first on the list because everything else in this stage is invisible
+without it: a social preview cannot be tested without a public URL, and
+`robots.txt` and a sitemap describe a site that does not exist yet.
+
+Vercel is the obvious host — it builds Next without configuration, gives every
+pull request a preview URL, and the free tier covers a marketing site. The
+setup is a dashboard task rather than a code one, and the only non-default
+answer is the root directory:
+
+1. <https://vercel.com/new> → import `llisowski27-hub/stealthhire`
+2. **Root Directory: `apps/web`** — the repository root has no `package.json`,
+   so the build fails without this
+3. Framework preset Next.js, build command and output directory left as
+   detected
+4. Deploy
+
+Merges to `main` then publish automatically and every pull request gets its
+own preview link. There are no environment variables to set, because none
+exist yet.
+
+Worth deciding at the same time: a domain. The Vercel subdomain is fine for
+sharing internally and wrong for anything sent to a hiring desk.
+
 ### The design system page is public
 
 `/design` is an internal token and component gallery. It is linked from the
